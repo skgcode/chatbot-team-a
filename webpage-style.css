@@ -1,0 +1,66 @@
+div.title {
+    text-align: center;
+}
+
+
+#titlos a{
+
+	text-decoration: none;
+	color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left:40%;
+    overflow: hidden;
+    background-color: #333;
+
+}
+
+
+li {
+   float:left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.content {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc; 
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
