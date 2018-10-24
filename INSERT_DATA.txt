@@ -1,0 +1,127 @@
+INSERT INTO Region
+VALUES (0,'center');
+INSERT INTO Region
+VALUES (0,'kalamaria');
+INSERT INTO Region
+VALUES (0,'pylaia');
+INSERT INTO Region
+VALUES (0,'evosmos');
+INSERT INTO Region
+VALUES (0,'oraiokastro');
+INSERT INTO Region
+VALUES (0,'thermi');
+INSERT INTO Region
+VALUES (0,'neapoli');
+
+INSERT INTO Building_Type
+VALUES (0,'studios');
+INSERT INTO Building_Type
+VALUES (0,'flat');
+INSERT INTO Building_Type
+VALUES (0,'house');
+
+INSERT INTO Transaction_Type
+VALUES (0,'buy');
+INSERT INTO Transaction_Type
+VALUES (0,'rent');
+INSERT INTO Transaction_Type
+VALUES (0,'sell');
+
+INSERT INTO Building(id,typeID,regionID,type_transID,price,square_meters,year,floor,heating,renovated,furnished,elevator)
+VALUES (0,1,1,1,100000,35,1995,2,'petrol','yes','yes','no');
+INSERT INTO Building
+VALUES (0,1,1,1,120000,32,1994,1,'gas','yes','no','yes');
+INSERT INTO Building
+VALUES (0,1,1,1,80000,30,1991,5,'petrol','no','yes','no');
+INSERT INTO Building
+VALUES (0,1,2,1,110000,31,1995,3,'petrol','no','yes','no');
+INSERT INTO Building
+VALUES (0,1,2,1,150000,36,2000,3,'gas','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,1,2,1,110000,31,1995,3,'petrol','no','yes','no');
+INSERT INTO Building
+VALUES (0,1,2,1,140000,32,2005,2,'gas','no','yes','yes');
+INSERT INTO Building
+VALUES (0,1,2,1,210000,37,2015,3,'gas','no','yes','yes');
+INSERT INTO Building
+VALUES (0,1,2,1,120000,33,2003,1,'petrol','yes','no','yes');
+INSERT INTO Building
+VALUES (0,2,3,1,250000,58,2004,3,'gas','no','yes','yes');
+INSERT INTO Building
+VALUES (0,2,3,1,200000,54,2010,2,'petrol','no','no','yes');
+INSERT INTO Building
+VALUES (0,2,3,1,190000,57,2004,5,'gas','no','no','yes');
+INSERT INTO Building
+VALUES (0,2,3,1,240000,66,2002,5,'petrol','yes','no','yes');
+INSERT INTO Building
+VALUES (0,2,3,1,220000,64,1989,4,'gas','no','no','yes');
+INSERT INTO Building
+VALUES (0,2,4,1,150000,71,1974,2,'petrol','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,3,4,1,300000,100,1989,0,'gas','yes','yes','no');
+INSERT INTO Building
+VALUES (0,3,4,1,280000,89,1984,0,'gas','no','yes','no');
+INSERT INTO Building
+VALUES (0,3,4,1,295000,85,1986,0,'petrol','no','yes','no');
+INSERT INTO Building(id,typeID,regionID,type_transID,price,square_meters,year,floor,heating,renovated,furnished,elevator)
+VALUES (0,3,4,1,340000,95,1982,0,'gas','no','yes','no');
+INSERT INTO Building
+VALUES (0,1,5,1,245000,31,1986,2,'petrol','no','yes','no');
+INSERT INTO Building
+VALUES (0,1,6,1,215000,35,1996,4,'gas','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,1,6,1,205000,35,1992,1,'gas','no','no','no');
+INSERT INTO Building
+VALUES (0,1,7,1,240000,33,1997,3,'gas','no','yes','yes');
+INSERT INTO Building
+VALUES (0,1,7,1,215000,35,1996,4,'gas','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,1,6,1,215000,30,1991,4,'petrol','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,1,6,2,240,32,1991,3,'petrol','yes','yes','no');
+INSERT INTO Building
+VALUES (0,1,5,2,300,35,1990,2,'petrol','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,1,1,2,245,36,1996,1,'petrol','yes','yes','no');
+INSERT INTO Building
+VALUES (0,1,1,2,240,34,2000,2,'gas','no','yes','no');
+INSERT INTO Building
+VALUES (0,2,3,2,310,60,1996,3,'gas','no','yes','yes');
+INSERT INTO Building
+VALUES (0,2,2,2,340,70,1986,2,'petrol','yes','yes','no');
+INSERT INTO Building
+VALUES (0,3,4,2,475,102,2000,0,'gas','no','yes','no');
+INSERT INTO Building
+VALUES (0,3,5,2,700,115,2002,0,'gas','no','yes','no');
+INSERT INTO Building
+VALUES (0,3,7,2,600,93,1980,0,'gas','yes','yes','no');
+INSERT INTO Building
+VALUES (0,2,1,2,450,79,2004,2,'gas','no','no','yes');
+INSERT INTO Building
+VALUES (0,2,2,2,440,89,2002,4,'gas','yes','no','yes');
+INSERT INTO Building
+VALUES (0,1,1,2,340,39,2007,3,'gas','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,2,4,2,490,60,2004,1,'petrol','yes','yes','no');
+INSERT INTO Building
+VALUES (0,2,7,2,390,63,1970,6,'gas','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,2,5,2,270,45,2003,2,'petrol','yes','yes','no');
+INSERT INTO Building
+VALUES (0,2,1,2,320,51,2001,4,'gas','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,1,2,2,240,29,2012,3,'gas','no','yes','no');
+INSERT INTO Building
+VALUES (0,1,6,2,240,40,2000,1,'petrol','yes','yes','no');
+INSERT INTO Building
+VALUES (0,3,7,2,580,90,2003,0,'petrol','no','yes','no');
+INSERT INTO Building
+VALUES (0,3,1,2,1080,110,2010,0,'gas','no','yes','no');
+INSERT INTO Building
+VALUES (0,2,1,2,480,90,2005,2,'petrol','no','no','yes');
+INSERT INTO Building
+VALUES (0,2,6,2,395,78,2009,5,'gas','yes','yes','yes');
+INSERT INTO Building
+VALUES (0,1,4,2,280,29,2013,4,'gas','yes','yes','no');
+INSERT INTO Building
+VALUES (0,2,5,2,380,50,2001,2,'petrol','no','no','yes');
