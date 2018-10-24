@@ -38,3 +38,8 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+
+#th {
+    overflow: auto !important;
+    height: 30em !important;
+}

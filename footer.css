@@ -1,5 +1,5 @@
 body {
-    display: flex;
+    display: flex; 
     min-height: 100vh;
     flex-direction: column;
   }
@@ -12,10 +12,11 @@ main {
   background-color: black !important;
   color: white;
   bottom: 0;
-  position: fixed;
+  position: relative;
   left: 0;
   width: 100%;
   text-align: center;
+  margin-top: 100px !important;
 }
 
 .fa {
@@ -55,4 +56,12 @@ main {
 .fa-instagram {
   background: rgb(195, 42, 163);
   color: white;
+}
+
+.footer-copyright {
+    margin-top: 15px;
+}
+.grey-text {
+    color: white;
+    text-decoration: none;
 }
