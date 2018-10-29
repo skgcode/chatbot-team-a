@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  <!-- for mobile -->
+	<link rel="stylesheet" type="text/css" href="bubblebot.css">
+	<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet"> <!-- bot's font in bubble -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="bubblebot.js"></script>
+
+
+</head>
+<body>
+	<!-- button for the bubble -->
+	<button class="open-button" onclick="openForm()">You need help? Ask Rea!</button>
+	<!-- popup form for messages -->
+	<div class="chat-popup" id="myForm">
+  		<form action="#" class="form-container">
+    		<h2>Rea</h2>
+
+		    <!-- <label for="msg"><b>Hello! I'm Rea. How can I help you today?</b></label> -->
+		    <textarea id="response" placeholder="Type message.." name="msg" ></textarea>
+		    <input id="input" type="text">
+
+		    <button id="rec" type="submit" class="btn">Send</button>
+		    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</form>
+	</div>
+
+
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+</script>
+</body>
+</html>
