@@ -1,8 +1,17 @@
+body {
+    font-family: 'Abel', sans-serif !important;
+    margin-right: 40px !important;
+    margin-left: 40px !important;
+}
+
 .content {
     margin-right: 40px;
     margin-left: 40px;
 }
 
+#abt {
+    letter-spacing: 2px;
+}
 
 .accordion {
     background-color: #eee;
@@ -17,13 +26,39 @@
     transition: 0.4s;
 }
 
+.accordion, p {
+    font-family: 'Abel', sans-serif;
+    font-size: 17px !important;
+    color: black;
+}
+
 .active, .accordion:hover {
     background-color: #ccc; 
 }
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+/*#th {
+    overflow: auto !important;
+    height: 40em !important;
+}*/
 
 .panel {
     padding: 0 18px;
     display: none;
     background-color: white;
     overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
 }
+

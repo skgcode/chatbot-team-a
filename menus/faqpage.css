@@ -1,7 +1,16 @@
+body {
+    font-family: 'Abel', sans-serif !important;
+}
+
 .content {
 	margin-right: 40px;
 	margin-left: 40px;
 }
+
+#abt {
+    letter-spacing: 2px;
+}
+
 .accordion {
 	background-color: #eee;
 	color: #444;
@@ -14,6 +23,17 @@
     font-size: 15px;
     transition: 0.4s;
 }
+
+.fqs {
+    letter-spacing: 2px;
+}
+
+.accordion, p {
+    font-family: 'Abel', sans-serif;
+    font-size: 17px !important;
+    color: black;
+}
+
 
 .active, .accordion:hover {
     background-color: #ccc;
@@ -39,7 +59,7 @@
     transition: max-height 0.2s ease-out;
 }
 
-#th {
+/*#th {
     overflow: auto !important;
-    height: 30em !important;
-}
+    height: 15em !important;
+}*/

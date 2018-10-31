@@ -1,101 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>vriskospiti.gr</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="contact.css">
-	<link rel="stylesheet" type="text/css" href="../webpage-style.css">
-	<link rel="stylesheet" type="text/css" href="../footer.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-
+    <title>vriskospiti.gr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="../webpage-style.css">
+    <link rel="stylesheet" type="text/css" href="../footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
- 
   	<div class="title">  <!-- klasi gia ton titlo -->
-
   		<h1 id="titlos"><a href="../webpage.html">vriskospiti.gr</a></h1>
-
    </div>
  <!-- Kentriko menu -->
-
     <ul class="nav">   <!-- klasi gia to menu -->
        <li><a href="about-us.html">About Us</a></li>
        <li><a href="faqpage.html">FAQs</a></li>
        <li><a href="contact.html">Contact</a></li>
    </ul>
-
-
-
 	<!-- Contact Form -->
 	<div class="container1">
 	  <div style="text-align:center">
-	    <h2>Contact Us</h2>
+	    <h2 id="cntnct">Contact Us</h2>
 	    <p>Swing by for a cup of coffee, or leave us a message:</p>
 	  </div>
 	  <div class="row">
 	    <div class="column">
-	      <div id="map" style="width:100%;height:500px"></div>
+        <img src="contactmap.jpg" id="img" style="width: 90%;height: 500px">
+	      <!-- <div id="map" style="width:100%;height:500px"></div> -->
 	    </div>
 	    <div class="column">
 	      <form action="/action_page.php">
-	        <label for="fname">First Name</label>
-	        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-	        <label for="lname">Last Name</label>
-	        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-	        <label for="city">City</label>
+	        <label for="fname"><b>First Name</b></label>
+	        <input type="text" id="fname" name="firstname" placeholder="Your name.." required="required">
+	        <label for="lname"><b>Last Name</b></label>
+	        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required="required">
+	        <label for="city"><b>City</b></label>
 	        <select id="city" name="city">
 	          <option value="thessaloniki">Thessaloniki</option>
 	          <option value="athens">Athens</option>
 	          <option value="Volos">Volos</option>
 	        </select>
-	        <label for="subject">Subject</label>
+	        <label for="subject"><b>Subject</b></label>
 	        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
 	        <input type="submit" value="Submit">
 	      </form>
 	    </div>
 	  </div>
 	</div>
+  <!-- footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Find Us!</h5>
+          <a href="#" class="fa fa-facebook"></a>
+		  		<a href="#" class="fa fa-twitter"></a>
+			   	<a href="#" class="fa fa-google"></a>
+				  <a href="#" class="fa fa-linkedin"></a>
+				  <a href="#" class="fa fa-instagram"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer copyright-->
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Copyright Team-a | skg.code
+        <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Script for maps | we don't have the api key -->
+  <!-- <script src="contact.js"></script> -->
 
-
-<!-- footer -->
-	   <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Find Us!</h5>
-                <a href="#" class="fa fa-facebook"></a>
-				<a href="#" class="fa fa-twitter"></a>
-				<a href="#" class="fa fa-google"></a>
-				<a href="#" class="fa fa-linkedin"></a>
-				<a href="#" class="fa fa-instagram"></a>
-              </div>
-              <!-- <div class="col l4 offset-l2 s12"> 
-                <h5 class="white-text">Navigate</h5>
-                	<ul> 
-                  <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">FAQs</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Support</a></li>
-                </ul>
-              </div>-->
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2018 Copyright Team-a | skg.code
-            <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
-            </div>
-          </div>
-        </footer>
-
-<!-- Script for maps | we don't have the api key -->
-<script src="contact.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script> -->
+  <!--
+  To use this code on your website, get a free API key from Google.
+  Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+  -->
 
 </body>
 </html>

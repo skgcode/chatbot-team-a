@@ -8,12 +8,13 @@
 	border: none;
 	cursor: pointer;
 	opacity: 0.8;
-	position: fixed;
-	bottom: 23px;
+	position: absolute;
+	bottom: 117px; /* it was 73px for laptop screen */
 	right: 28px;
 	width: 280px;
 	font-size: 19px;
 	font-family: 'Abel', sans-serif; /* font for the chatbot */
+	margin-right: 25px;
 }
 
 .open-button:hover {
@@ -49,6 +50,7 @@
   background: #f1f1f1;
   resize: none;
   min-height: 200px;
+  cursor: auto;
 }
 
 /* When the textarea gets focus, do something */
@@ -84,3 +86,13 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+/* User's input style */
+
+#input {
+	margin-bottom: 10px;
+	border: 2px solid #66ccff;
+	border-radius: 8px;
+	padding: 14px 64px;
+}
+
