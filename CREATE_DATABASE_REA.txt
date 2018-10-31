@@ -22,7 +22,7 @@ CREATE TABLE Building(
 	id INT NOT NULL AUTO_INCREMENT,
 	typeID INT,
 	regionID INT,
-    type_transID INT,
+    	type_transID INT,
 	price FLOAT,
 	square_meters INT,
 	year INT,
