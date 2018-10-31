@@ -1,30 +1,152 @@
 <!DOCTYPE html>
 <html>
-   <head>
-
-     <title>vriskospiti.gr</title>
-
-     <link rel="stylesheet" type="text/css" href="webpage-style.css">
-  
-   </head>
-	
-
-  <body>
-  	<div class="title">  <!-- klasi gia ton titlo -->
-
-  		<h1 id="titlos"><a href="webpage.html">vriskospiti.gr</a></h1>
-
-
-<!-- Kentriko menu -->
+<head>
+    <title>vriskospiti.gr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="webpage-style.css">
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- for dropdowns -->
+    <link rel="stylesheet" type="text/css" href="footer.css">
+    <link rel="stylesheet" type="text/css" href="botbubble/bubblebot.css"><!-- bubblebot's style -->
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="dropscript.js"></script> <!-- for dropdowns -->
+    <!-- for chatbot -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="botbubble/bubblebot.js"></script>
+</head>
+<body>
+    <div class="title">
+        <!-- klasi gia ton titlo -->
+        <h1 id="titlos"><a href="webpage.html">vriskospiti.gr</a></h1>
     </div>
+    <!-- Kentriko menu -->
+    <ul class="nav">
+        <!-- klasi gia to menu -->
+        <li><a href="menus/about-us.html">About Us</a></li>
+        <li><a href="menus/faqpage.html">FAQs</a></li>
+        <li><a href="menus/contact.html">Contact</a></li>
+    </ul>
+    <form id="drops">
+        <p><b>City</b></p> <!--Only Thessaloniki is going to work; the other cities should remain disabled -->
+        <select name="city">
+            <option selected="selected" disabled="disabled">Select a city-</option>
+            <option value="1">Thessaloniki</option>
+            <option value="2" disabled="disabled">Athens</option>
+            <option value="3" disabled="disabled">Heraklion</option>
+            <option value="4" disabled="disabled">Volos</option>
+            <option value="5" disabled="disabled">Ioannina</option>
+        </select>
+        <p><b>Municipality</b></p>
+        <select name="municipality">
+            <option selected="selected" disabled="disabled">-Select a municipality-</option>
+            <option value="1">Thessaloniki-Center</option>
+            <option value="2">Kalamaria</option>
+            <option value="3">Pylaia</option>
+            <option value="4">Thermi</option>
+            <option value="5">Pavlos Melas</option>
+            <option value="6">Ampelokipoi-Menemeni</option>
+            <option value="7">Euosmos</option>
+            <option value="8">Oraiokastro</option>
+            <option value="9">Thermaikos</option>
+            <option value="10">Delta</option>
+            <option value="11">Neapoli-Sykies</option>
+        </select>
+        <p><b>Apartment type</b></p>
+        <select name="type">
+            <option selected="selected" disabled="disabled">-Select an apartment type</option>
+            <option value="1">Studio</option>
+            <option value="2">Flat</option>
+            <option value="3">House</option>
+        </select>
+        <br><br>
+        <p><b>Price(€)</b></p>
+        <select name="price">
+            <option selected="selected" disabled="disabled">min</option>
+            <option value="1">50</option>
+            <option value="2">100</option>
+            <option value="3">200</option>
+            <option value="4">300</option>
+            <option value="5">500</option>
+            <option value="6">1000</option>
+            <option value="7">2000</option>
+            <option value="7">3000</option>
+            <option value="7">5000</option>
+            <option value="7">10000</option>
+            <option value="7">30000</option>
+            <option value="7">50000</option>
+            <option value="7">100000</option>
+            <option value="7">200000</option>
+            <option value="7">300000</option>
+            <option value="7">400000</option>
+        </select>
+        <span id="to"><b>to</b></span> 
+        <select name="price">
+            <option value="1">50</option>
+            <option value="2">100</option>
+            <option value="3">200</option>
+            <option value="4">300</option>
+            <option value="5">500</option>
+            <option value="6">1000</option>
+            <option value="7">2000</option>
+            <option value="7">3000</option>
+            <option value="7">5000</option>
+            <option value="7">10000</option>
+            <option value="7">30000</option>
+            <option value="7">50000</option>
+            <option value="7">100000</option>
+            <option value="7">200000</option>
+            <option value="7">300000</option>
+            <option value="7">400000</option>
+            <option selected="selected" disabled="disabled">max</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" id="letsgo">Let's Go!</button> <!--later, this should actually work-->
+    </form>
+    <!-- button for the bubble -->
+    <button class="open-button" onclick="openForm()">You need help? Ask Me!</button>
+    <!-- popup form for messages -->
+    <div class="chat-popup" id="myForm">
+        <form action="#" class="form-container">
+            <h2>Rea</h2>
+            <textarea id="response" placeholder="Type message.." name="msg" readonly></textarea>
+            <input id="input" type="text" placeholder="Write here..">
+            <button id="rec" type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Find Us!</h5>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+         <!-- Footer copyright-->
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright Team-a | skg.code
+                <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    <!-- For open form and close it bot chat -->
+    <script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
 
-    <ul class="nav">   <!-- klasi gia to menu -->
-       <li><a href="about-us.html">About Us</a></li>
-       <li><a href="#FAQs">FAQs</a></li>
-       <li><a href="#contact">Contact</a></li>
-   </ul>
-
-
-  </body>
-
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+</body>
 </html>

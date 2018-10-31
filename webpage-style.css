@@ -1,23 +1,40 @@
+body {
+    margin-right: 40px;
+    margin-left: 40px;
+    font-family: 'Abel', sans-serif;
+
+}
+
 div.title {
+    text-align: left;
+}
+
+
+#titlos  a {
+    font-size: 40px !important;
+    text-decoration: none;
+    color: black;
+    font-family: 'Rajdhani', sans-serif !important;
+}
+
+
+.nav {
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding-left:40%  !important;
+    overflow: hidden !important;
+    background-color: #333 !important;
+    letter-spacing: 2px;
     text-align: center;
+    border-radius: 5px;
+    font-size: 22px;
 }
 
-
-#titlos a{
-
-	text-decoration: none;
-	color: black;
+span{
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right:10px;
 }
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding-left:40%;
-    overflow: hidden;
-    background-color: #333;
-
-}
-
 
 li {
    float:left;
@@ -35,32 +52,20 @@ li a:hover {
     background-color: #111;
 }
 
-.content {
-    margin-right: 40px;
-    margin-left: 40px;
+#drops {
+    margin-top: 17px;
+    margin-left: 12px;
 }
 
-
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
+select {
+    font-family: 'Abel', sans-serif;
     font-size: 15px;
-    transition: 0.4s;
+    color: black;
 }
 
-.active, .accordion:hover {
-    background-color: #ccc; 
-}
-
-.panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
+#letsgo {
+    font-family: 'Abel', sans-serif;
+    font-size: 17px;
+    color: black;
+    border-radius: 5px;
 }

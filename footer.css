@@ -2,20 +2,33 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
 main {
     flex: 1 0 auto;
 }
 
 .page-footer {
+  font-family: 'Open Sans Condensed', sans-serif;
   background-color: black !important;
   color: white;
-  bottom: 0;
-  position: fixed;
+  bottom: -300px !important; /* it was -235px for screen laptop */
+  position: relative;
   left: 0;
   width: 100%;
   text-align: center;
+  margin-top: 100px !important;
+  border-radius: 5px;
+}
+
+.white-text {
+  margin-top: 15px;
+  font-size: 17px;
+  letter-spacing: 3px;
+}
+
+.footer-copyright {
+  margin-bottom: 10px;
 }
 
 .fa {
@@ -55,4 +68,12 @@ main {
 .fa-instagram {
   background: rgb(195, 42, 163);
   color: white;
+}
+
+.footer-copyright {
+    margin-top: 15px;
+}
+.grey-text {
+    color: white;
+    text-decoration: none;
 }
