@@ -1,8 +1,7 @@
 body {
-    margin-right: 40px;
-    margin-left: 40px;
-    font-family: 'Abel', sans-serif;
-
+    margin-right: 40px !important;
+    margin-left: 40px !important;
+    font-family: 'Abel', sans-serif !important;
 }
 
 div.title {
@@ -30,7 +29,7 @@ div.title {
     font-size: 22px;
 }
 
-span{
+span {
     font-size: 14px;
     margin-left: 10px;
     margin-right:10px;
@@ -59,13 +58,18 @@ li a:hover {
 
 select {
     font-family: 'Abel', sans-serif;
-    font-size: 15px;
+    font-size: 15px !important;
     color: black;
+    border-radius: 5px;
+    margin-bottom: 17px !important;
 }
 
 #letsgo {
     font-family: 'Abel', sans-serif;
     font-size: 17px;
-    color: black;
-    border-radius: 5px;
+    color: white;
+    border-radius: 30px;
+    background-color: #000000;
+    padding: 14px 25px;
+    border: none;
 }

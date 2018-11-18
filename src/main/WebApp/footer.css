@@ -12,10 +12,9 @@ main {
   font-family: 'Open Sans Condensed', sans-serif;
   background-color: black !important;
   color: white;
-  bottom: -300px !important; /* it was -235px for screen laptop */
-  position: relative;
-  left: 0;
-  width: 100%;
+  bottom: 0; /* it was -235px for screen laptop */
+  position: absolute;
+  width: 96%;
   text-align: center;
   margin-top: 100px !important;
   border-radius: 5px;
@@ -73,6 +72,7 @@ main {
 .footer-copyright {
     margin-top: 15px;
 }
+
 .grey-text {
     color: white;
     text-decoration: none;
