@@ -48,11 +48,6 @@ body {
     content: "\2212";
 }
 
-/*#th {
-    overflow: auto !important;
-    height: 40em !important;
-}*/
-
 .panel {
     padding: 0 18px;
     display: none;

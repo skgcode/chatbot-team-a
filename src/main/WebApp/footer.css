@@ -35,7 +35,6 @@ main {
   font-size: 30px;
   width: 38px;
   text-align: center;
-  text-decoration: none;
   margin: 5px 2px;
   border-radius: 8px;
 }
@@ -75,5 +74,16 @@ main {
 
 .grey-text {
     color: white;
-    text-decoration: none;
+}
+
+.grey-text:hover {
+  color: #55ACEE;
+}
+
+.skgcode {
+  color: burlywood;
+}
+
+.skgcode:hover {
+  color: #55ACEE;
 }
