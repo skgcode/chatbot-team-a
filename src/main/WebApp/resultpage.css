@@ -1,0 +1,6 @@
+.coveo-result-frame .coveo-result-cell > *, .CoveoResult.coveo-result-frame .coveo-result-cell > * {
+    vertical-align: middle;
+    color: black;
+    background-color: #f4f4f4;
+    border-radius: 20px;
+}

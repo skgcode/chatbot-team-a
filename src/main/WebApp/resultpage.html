@@ -6,11 +6,14 @@
     <title>Result Page</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="footer.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://static.cloud.coveo.com/searchui/v1.2537/js/CoveoJsSearch.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="resultpage.css">
+    <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.4609/css/CoveoFullSearch.css"/>
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="resultpage.js"></script>
+   <script src="resultpage.js"></script>
 </head>
 <body>
     <div class="title">
@@ -24,12 +27,18 @@
         <li><a href="menus/faqpage.html">FAQs</a></li>
         <li><a href="menus/contact.html">Contact</a></li>
     </ul>
-    <div id="results">
 
-    </div>
-    
-    
-    
+    <span style="padding-top: 20px;padding-bottom:20px;font-size: 20px">These are the results that came back: </span>
+    <!--Result Page using Coveo Framework-->
+    <div coveo-main-section>
+        <div class="coveo-result-list-container coveo-list-layout-container">
+        <div class="coveo-results-column">
+
+
+            </div>
+        </div>
+        </div>
+
     <!-- footer -->
     <footer class="page-footer">
         <div class="container">
