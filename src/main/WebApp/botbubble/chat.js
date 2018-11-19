@@ -91,7 +91,13 @@ function fakeMessage() {
     setTimeout(function () {
         $('.message.loading').remove();
 		//put bot's answer in window
-        $('<div class="message new"><figure class="avatar"><img src="https://us.123rf.com/450wm/goodzone95/goodzone951803/goodzone95180300023/96668201-chatbot-icon-cute-robot-working-behind-laptop-modern-bot-sign-design-smiling-customer-service-robot-.jpg?ver=6" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+        if (msg.match(/.*result.*/gi)) {
+            $('<div class="message new"><figure class="avatar"><img src="https://us.123rf.com/450wm/goodzone95/goodzone951803/goodzone95180300023/96668201-chatbot-icon-cute-robot-working-behind-laptop-modern-bot-sign-design-smiling-customer-service-robot-.jpg?ver=6" /></figure>' + '<a href="resultpage.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        } else {
+            $('<div class="message new"><figure class="avatar"><img src="https://us.123rf.com/450wm/goodzone95/goodzone951803/goodzone95180300023/96668201-chatbot-icon-cute-robot-working-behind-laptop-modern-bot-sign-design-smiling-customer-service-robot-.jpg?ver=6" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        }
         setDate();
         updateScrollbar();
         //i++;
