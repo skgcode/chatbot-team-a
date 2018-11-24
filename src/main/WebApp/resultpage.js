@@ -26,7 +26,7 @@ $(document).ready(function() {
         price.append(entry.price+ "€");
         price.style.cssText="text-align:right;margin-right:3%;";
         block4.append(price);
-        block4.style.cssText="margin-left:2%"
+        block4.style.cssText = "margin-left:2%";
         var description = document.createElement("div");
         description.className="coveo-result-row";
         description.style.css="margin-top:10px;";

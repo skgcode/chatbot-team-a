@@ -1,89 +1,174 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+
+  display: flex;
+  flex-direction: column;
+
 }
+
+
 
 main {
-    flex: 1 0 auto;
+
+  flex: 1 0 auto;
+
 }
+
+
 
 .page-footer {
+
   font-family: 'Open Sans Condensed', sans-serif;
+
   background-color: black !important;
+
   color: white;
+
   bottom: 0; /* it was -235px for screen laptop */
-  position: absolute;
-  width: 96%;
+
+  position: static;
+  margin-bottom: inherit;
+  width: 100%;
+
   text-align: center;
+
   margin-top: 100px !important;
+
   border-radius: 5px;
+
 }
+
+
 
 .white-text {
+
   margin-top: 15px;
+
   font-size: 17px;
+
   letter-spacing: 3px;
+
 }
 
+
+
 .footer-copyright {
+
   margin-bottom: 10px;
+
 }
+
+
 
 .fa {
+
   padding: 11px;
+
   font-size: 30px;
+
   width: 38px;
+
   text-align: center;
+
   margin: 5px 2px;
+
   border-radius: 8px;
+
 }
+
+
 
 .fa:hover {
-    opacity: 0.7;
+
+  opacity: 0.7;
+
 }
+
+
 
 .fa-facebook {
+
   background: #3B5998;
+
   color: white;
+
 }
+
+
 
 .fa-twitter {
+
   background: #55ACEE;
+
   color: white;
+
 }
+
+
 
 .fa-google {
+
   background: #dd4b39;
+
   color: white;
+
 }
+
+
 
 .fa-linkedin {
+
   background: #007bb5;
+
   color: white;
+
 }
+
+
 
 .fa-instagram {
+
   background: rgb(195, 42, 163);
+
   color: white;
+
 }
+
+
 
 .footer-copyright {
-    margin-top: 15px;
+
+  margin-top: 15px;
+
 }
+
+
 
 .grey-text {
-    color: white;
+
+  color: white;
+
 }
+
+
 
 .grey-text:hover {
+
   color: #55ACEE;
+
 }
+
+
 
 .skgcode {
+
   color: burlywood;
+
 }
 
+
+
 .skgcode:hover {
+
   color: #55ACEE;
+
 }
