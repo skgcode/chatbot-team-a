@@ -3,8 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="menus/faqpage.css">
     <link rel="stylesheet" type="text/css" href="menus/contact.css">
+    <link id="faqpage" rel="stylesheet" href="/menus/faqpage.css" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" href="botbubble/stylechat.css">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
@@ -14,6 +14,7 @@
     <!--chatbot-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
 </head>
@@ -29,8 +30,9 @@
         <li id="faqs">FAQs</li>
         <li id="contact">Contact</li>
     </ul>
-    <!-- load all the other files -->
+<!-- load all the other files -->
     <div id="webpage"></div>
+
     <!-- button for the bubble -->
     <button class="open-button" style="position:fixed" onclick="openForm()">You need help? Ask Me!</button>
     <!-- popup form for messages -->
@@ -97,6 +99,7 @@
         $("#aboutus").click(function () {
             document.title = "About Us";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', false);
             $('#webpage').load('menus/about-us.html');
         });
     </script>
@@ -104,6 +107,7 @@
         $("#faqs").click(function () {
             document.title = "FAQs";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', false);
             $('#webpage').load('menus/faqpage.html');
         });
     </script>
@@ -111,6 +115,7 @@
         $("#contact").click(function () {
             document.title = "Contact";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
             $('#webpage').load('menus/contact.html');
         });
     </script>
@@ -118,6 +123,7 @@
         $("#titlos").click(function () {
             document.title = "vriskospiti.gr";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
             $('#webpage').load('carousel.html');
         });
     </script>

@@ -10,7 +10,7 @@
   cursor: pointer;
   opacity: 0.8;
   position: absolute;
-  bottom: 180px; /* it was 73px for laptop screen */
+  bottom: 150px; /* it was 73px for laptop screen */
   right: 28px;
   width: 280px;
   font-size: 19px;
