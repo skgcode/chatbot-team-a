@@ -6,7 +6,15 @@ import java.util.List;
 
 public interface BuildingService {
 
-    Building getBuilding(Integer id);
+    Building getBuildingById(Integer id);
+
+    List<Building> getBuildingByPrice(Float price);
+
+    List<Building> getBuildingByYear(Integer year);
+
+    List<Building> getBuildingBySquareMeters(Integer sqMeters);
 
     List<Building> getAllBuildings();
+
+    List<Building> getFilteredBuildings(Float price, Integer year, Integer squareMeters);
 }
