@@ -3,7 +3,7 @@ var $messages = $('.messages-content'),
     i = 0;
 
 // accessToken του botακιου
-var accessToken = "4e6e1bc23f454cb09bab4ce86c570042";
+var accessToken = "0285176607954548808307bde116bf9e";
 
 //url του dialogflow api
 var baseUrl = "https://api.dialogflow.com/v1/";
@@ -67,7 +67,7 @@ function fakeMessage() {
     if ($('.message-input').val() != '') {
         return false;
     }
-	//http call to bot
+    //http call to bot
     $.ajax({
         type: "POST",
         url: baseUrl + "query?v=20150910",
@@ -78,7 +78,7 @@ function fakeMessage() {
         },
         data: JSON.stringify({query: msg, lang: "en", sessionId: "somerandomthing"}),
         success: function (data) {
-			//take bot's answer in 'respText' variable
+            //take bot's answer in 'respText' variable
             respText = data.result.fulfillment.speech;
         },
         error: function () {
@@ -90,7 +90,7 @@ function fakeMessage() {
 
     setTimeout(function () {
         $('.message.loading').remove();
-		//put bot's answer in window
+        //put bot's answer in window
         if (msg.match(/.*result.*/gi)) {
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="resultpage.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
