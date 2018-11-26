@@ -3,8 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="menus/faqpage.css">
     <link rel="stylesheet" type="text/css" href="menus/contact.css">
+    <link id="faqpage" rel="stylesheet" href="/menus/faqpage.css" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" href="botbubble/stylechat.css">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
@@ -30,10 +30,8 @@
         <li id="faqs">FAQs</li>
         <li id="contact">Contact</li>
     </ul>
-
-    <div id="webpage">
-
-    </div>
+<!-- load all the other files -->
+    <div id="webpage"></div>
 
     <!-- button for the bubble -->
     <button class="open-button" style="position:fixed" onclick="openForm()">You need help? Ask Me!</button>
@@ -52,12 +50,13 @@
                 <div class="messages-content"></div>
             </div>
             <div class="message-box">
-                <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+                <textarea type="text" class="message-input" placeholder="Type message..." style="padding: 0;"></textarea>
                 <button type="submit" class="message-submit">Send</button>
             </div>
         </div>
         <div class="bg"></div>
     </div>
+    <section id="filler" style="height:19em; overflow:auto;"></section>
     <!-- footer -->
     <footer class="page-footer">
         <div class="container">
@@ -95,10 +94,12 @@
             document.getElementById("myForm").style.display = "none";
         }
     </script>
+    <!-- Load the other files -->
     <script>
         $("#aboutus").click(function () {
             document.title = "About Us";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', false);
             $('#webpage').load('menus/about-us.html');
         });
     </script>
@@ -106,6 +107,7 @@
         $("#faqs").click(function () {
             document.title = "FAQs";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', false);
             $('#webpage').load('menus/faqpage.html');
         });
     </script>
@@ -113,6 +115,7 @@
         $("#contact").click(function () {
             document.title = "Contact";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
             $('#webpage').load('menus/contact.html');
         });
     </script>
@@ -120,6 +123,7 @@
         $("#titlos").click(function () {
             document.title = "vriskospiti.gr";
             $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
             $('#webpage').load('carousel.html');
         });
     </script>

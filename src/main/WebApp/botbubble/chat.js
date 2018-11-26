@@ -3,7 +3,7 @@ var $messages = $('.messages-content'),
     i = 0;
 
 // accessToken του botακιου
-var accessToken = "0285176607954548808307bde116bf9e";
+var accessToken = "85334df769aa486bbb24cecd4eac338a";
 
 //url του dialogflow api
 var baseUrl = "https://api.dialogflow.com/v1/";
@@ -91,7 +91,7 @@ function fakeMessage() {
     setTimeout(function () {
         $('.message.loading').remove();
         //put bot's answer in window
-        if (msg.match(/.*result.*/gi)) {
+        if (respText.match(/.*result.*/gi)) {
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="resultpage.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
         } else {
@@ -102,5 +102,4 @@ function fakeMessage() {
         updateScrollbar();
         //i++;
     }, 1000 + (Math.random() * 20) * 100);
-
 }
