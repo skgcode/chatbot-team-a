@@ -5,15 +5,11 @@ body {
 
 }
 
-
-
 main {
 
   flex: 1 0 auto;
 
 }
-
-
 
 .page-footer {
 
@@ -25,7 +21,7 @@ main {
 
   bottom: 0; /* it was -235px for screen laptop */
 
-  position: static;
+  position: inherit;
   margin-bottom: inherit;
   width: 100%;
 
@@ -37,8 +33,6 @@ main {
 
 }
 
-
-
 .white-text {
 
   margin-top: 15px;
@@ -49,15 +43,11 @@ main {
 
 }
 
-
-
 .footer-copyright {
 
   margin-bottom: 10px;
 
 }
-
-
 
 .fa {
 
@@ -75,15 +65,11 @@ main {
 
 }
 
-
-
 .fa:hover {
 
   opacity: 0.7;
 
 }
-
-
 
 .fa-facebook {
 
@@ -93,8 +79,6 @@ main {
 
 }
 
-
-
 .fa-twitter {
 
   background: #55ACEE;
@@ -102,8 +86,6 @@ main {
   color: white;
 
 }
-
-
 
 .fa-google {
 
@@ -113,8 +95,6 @@ main {
 
 }
 
-
-
 .fa-linkedin {
 
   background: #007bb5;
@@ -122,8 +102,6 @@ main {
   color: white;
 
 }
-
-
 
 .fa-instagram {
 
@@ -133,15 +111,11 @@ main {
 
 }
 
-
-
 .footer-copyright {
 
   margin-top: 15px;
 
 }
-
-
 
 .grey-text {
 
@@ -149,23 +123,17 @@ main {
 
 }
 
-
-
 .grey-text:hover {
 
   color: #55ACEE;
 
 }
 
-
-
 .skgcode {
 
   color: burlywood;
 
 }
-
-
 
 .skgcode:hover {
 
