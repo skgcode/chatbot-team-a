@@ -8,7 +8,7 @@ import skgcode.teama.rea.Repository.BuildingRepository;
 import java.util.List;
 
 @Service
-public class BuildingServiceImpl implements BuildingService {
+public class BuildingServiceImplementation implements BuildingService {
 
     @Autowired
     BuildingRepository buildingRepository;

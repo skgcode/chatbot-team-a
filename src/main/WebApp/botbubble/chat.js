@@ -3,7 +3,7 @@ var $messages = $('.messages-content'),
     i = 0;
 
 // accessToken του botακιου
-var accessToken = "0285176607954548808307bde116bf9e";
+var accessToken = "4e6e1bc23f454cb09bab4ce86c570042";
 
 //url του dialogflow api
 var baseUrl = "https://api.dialogflow.com/v1/";

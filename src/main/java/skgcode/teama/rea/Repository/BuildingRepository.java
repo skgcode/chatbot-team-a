@@ -1,18 +1,17 @@
 package skgcode.teama.rea.Repository;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 import skgcode.teama.rea.Model.Building;
 
-@Repository
-public interface BuildingRepository extends JpaRepository<Building, Integer> {
+import java.util.List;
 
-    Building findAllById(Integer id);
+@Repository
+public interface BuildingRepository extends CrudRepository<Building, Integer> {
+
+    Building findBuildingById(Integer id);
 
     List<Building> findAll();
 
-    // TODO: Another search
+    // TODO: Implement searches for all entities [BuildingType, TransactionType, Region]
 }
