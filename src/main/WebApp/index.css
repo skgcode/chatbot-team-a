@@ -46,10 +46,11 @@ div.title {
 .nav {
     list-style-type: none !important;
     margin: 0 !important;
-    padding-left: 40% !important;
+    padding-left: 35% !important;
     background-color: #333 !important;
     letter-spacing: 2px;
     text-align: center;
+    align-content: center;
     border-radius: 5px;
     font-size: 22px;
 }
@@ -81,7 +82,7 @@ div.title {
     text-decoration: none;
 }
 
-   #aboutus:hover, #faqs:hover, #contact:hover #property:hover {
+   #aboutus:hover, #faqs:hover, #contact:hover,#property:hover {
         background-color: #111;
        cursor: pointer;
     }

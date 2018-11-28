@@ -209,5 +209,13 @@
             $('#webpage').load('carousel.html');
         });
     </script>
+     <script>
+        $("#property").click(function () {
+            document.title = "List your property";
+            $("#webpage").empty();
+            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
+            $('#webpage').load('newform.html');
+        });
+    </script>
 </body>
 </html>
