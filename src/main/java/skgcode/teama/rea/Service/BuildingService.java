@@ -16,6 +16,10 @@ public interface BuildingService {
 
     List<Building> getAllBuildings();
 
+    List<Building> getQueryWherePriceRangeOrYearOrSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters);
+
+    List<Building> getQueryWherePriceRangeAndYearAndSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters);
+
     List<Building> getQueryWherePriceOrYearOrSquaremeters(Float price, Integer year, Integer squareMeters);
 
     List<Building> getQueryWherePriceAndYearAndSquaremeters(Float price, Integer year, Integer squareMeters);

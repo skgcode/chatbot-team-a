@@ -48,7 +48,7 @@ public class BuildingController implements ApiController {
             params = {"price", "year", "squareMeters"},
             method = RequestMethod.GET)
     public List<Building> getQueryWherePriceOrYearOrSquareMeters(@RequestParam("price") Float price, @RequestParam("year") Integer year,
-                                             @RequestParam("squareMeters") Integer squareMeters) {
+                                                                 @RequestParam("squareMeters") Integer squareMeters) {
 
         return buildingService.getQueryWherePriceOrYearOrSquaremeters(price, year, squareMeters);
     }
@@ -58,7 +58,7 @@ public class BuildingController implements ApiController {
             params = {"price", "year", "squareMeters"},
             method = RequestMethod.GET)
     public List<Building> getQueryWherePriceAndYearAndSquareMeters(@RequestParam("price") Float price, @RequestParam("year") Integer year,
-                                             @RequestParam("squareMeters") Integer squareMeters) {
+                                                                   @RequestParam("squareMeters") Integer squareMeters) {
 
         return buildingService.getQueryWherePriceAndYearAndSquaremeters(price, year, squareMeters);
     }
@@ -81,5 +81,21 @@ public class BuildingController implements ApiController {
     public List<Building> getYearRangeBetween(@RequestParam("min") Integer min,
                                               @RequestParam("max") Integer max) {
         return buildingService.getYearRangeBetween(min, max);
+    }
+
+    @RequestMapping(value="/building/query/priceRangeOrYearOrsquareMeters",
+            params = {"priceMin","priceMax","year","squareMeters"},
+            method = RequestMethod.GET)
+    public List<Building> getQueryWherePriceRangeOrYearOrSquaremeters(@RequestParam("priceMin") Float priceMin,
+                                                                      @RequestParam("priceMax") Float priceMax, @RequestParam("year") Integer year, @RequestParam("squareMeters") Integer squareMeters) {
+        return buildingService.getQueryWherePriceRangeOrYearOrSquearmeters(priceMin, priceMax, year, squareMeters);
+    }
+
+    @RequestMapping(value="/building/query/priceRangeAndYearAndsquareMeters",
+            params = {"priceMin","priceMax","year","squareMeters"},
+            method = RequestMethod.GET)
+    public List<Building> getQueryWherePriceRangeAndYearAndSquaremeters(@RequestParam("priceMin") Float priceMin,
+                                                                        @RequestParam("priceMax") Float priceMax, @RequestParam("year") Integer year, @RequestParam("squareMeters") Integer squareMeters) {
+        return buildingService.getQueryWherePriceRangeAndYearAndSquearmeters(priceMin, priceMax, year, squareMeters);
     }
 }
