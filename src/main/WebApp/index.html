@@ -30,8 +30,89 @@
         <li id="faqs">FAQs</li>
         <li id="contact">Contact</li>
     </ul>
+    <ul class="dropdowns" style="width: 100%;opacity: 100%;border-color: #333;margin: 0">
+        <div class="container">
+            <form class="form-inline" style="height:50px; padding-top: 8px;width:1340px;">
+                City &emsp;<!--Only Thessaloniki is going to work; the other cities should remain disabled -->
+                <select id="form" class="form-control" name="city">
+                    <option selected="selected" disabled="disabled">Select a city-</option>
+                    <option value="1" >Thessaloniki</option>
+                    <option value="2" disabled="disabled">Athens</option>
+                    <option value="3" disabled="disabled">Heraklion</option>
+                    <option value="4" disabled="disabled">Volos</option>
+                    <option value="5" disabled="disabled">Ioannina</option>
+                </select> &emsp;
+                Municipality &emsp;
+                <select id="form" class="form-control" name="municipality"> 
+                    <option selected="selected" disabled="disabled">-Select a municipality-</option>
+                    <option value="1">Thessaloniki-Center</option>
+                    <option value="2">Kalamaria</option>
+                    <option value="3">Pylaia</option>
+                    <option value="4">Thermi</option>
+                    <option value="5">Pavlos Melas</option>
+                    <option value="6">Ampelokipoi-Menemeni</option>
+                    <option value="7">Euosmos</option>
+                    <option value="8">Oraiokastro</option>
+                    <option value="9">Thermaikos</option>
+                    <option value="10">Delta</option>
+                    <option value="11">Neapoli-Sykies</option>
+                </select> &emsp;
+                Apartment type &emsp;
+                <select class="form-control" id="form" name="type">
+                    <option selected="selected" disabled="disabled">-Select an apartment type</option>
+                    <option value="1">Studio</option>
+                    <option value="2">Flat</option>
+                    <option value="3">House</option>
+                </select>&emsp;
+                Price &emsp;
+                    <select class="form-control" id="form0" name="min.price">
+                            <option selected="selected" disabled="disabled">min</option>
+                            <option value="1">50</option>
+                            <option value="2">100</option>
+                            <option value="3">200</option>
+                            <option value="4">300</option>
+                            <option value="5">500</option>
+                            <option value="6">1000</option>
+                            <option value="7">2000</option>
+                            <option value="8">3000</option>
+                            <option value="9">5000</option>
+                            <option value="10">10000</option>
+                            <option value="11">30000</option>
+                            <option value="12">50000</option>
+                            <option value="13">100000</option>
+                            <option value="14">200000</option>
+                            <option value="15">300000</option>
+                            <option value="16">400000</option>
+                        </select> 
+                        <span>to 
+                        </span>
+                        <select class="form-control" id="form0" name="max.price">
+                            <option value="1">50</option>
+                            <option value="2">100</option>
+                            <option value="3">200</option>
+                            <option value="4">300</option>
+                            <option value="5">500</option>
+                            <option value="6">1000</option>
+                            <option value="7">2000</option>
+                            <option value="8">3000</option>
+                            <option value="9">5000</option>
+                            <option value="10">10000</option>
+                            <option value="11">30000</option>
+                            <option value="12">50000</option>
+                            <option value="13">100000</option>
+                            <option value="14">200000</option>
+                            <option value="15">300000</option>
+                            <option value="16">400000</option>
+                            <option selected="selected" disabled="disabled">max</option>
+                        </select>
+                    </select> &emsp;
+                <button id="form" class="search-button" type="submit" style="width:75px;">Let's Go!</button></li> <!--later, this should actually work-->
+            </form>
+            </div>
+    </ul>
+
 <!-- load all the other files -->
-    <div id="webpage"></div>
+    <div id="webpage" style="margin-top: 5%"></div>
 
     <!-- button for the bubble -->
     <button class="open-button" style="position:fixed" onclick="openForm()">You need help? Ask Me!</button>
@@ -50,7 +131,7 @@
                 <div class="messages-content"></div>
             </div>
             <div class="message-box">
-                <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+                <textarea type="text" class="message-input" placeholder="Type message..." style="padding: 0;"></textarea>
                 <button type="submit" class="message-submit">Send</button>
             </div>
         </div>

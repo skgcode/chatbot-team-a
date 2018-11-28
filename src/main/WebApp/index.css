@@ -10,7 +10,30 @@ body {
 div.title {
     text-align: left;
 }
-
+.search-button{
+  background: linear-gradient(135deg, #9ec2f9, #0010ca);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width:75px;
+  height:30px;
+  font-size: 15px;
+  font-family: 'Abel', sans-serif;
+}
+#form,.form-control{
+    width:175px;
+    list-style: none;
+    list-style-type: none;
+    padding:0% !important;
+}
+#form0{
+    width:75px!important;
+    list-style-type: none;
+    list-style: none;
+    padding:0;
+}
 
 #titlos {
     font-size: 40px !important;
@@ -19,7 +42,6 @@ div.title {
     font-family: 'Rajdhani', sans-serif !important;
     cursor: pointer;
 }
-
 
 .nav {
     list-style-type: none !important;
@@ -31,6 +53,25 @@ div.title {
     border-radius: 5px;
     font-size: 22px;
 }
+.dropdowns {
+    list-style: none;
+    list-style-type: none !important;
+    margin: 0 !important;
+    background-color: transparent!important;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border-style: groove;
+    border-top:hidden;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color: #333;
+    /*float:left;*/
+    display: inline-block;
+    color: black !important;
+    text-align: left;
+    text-decoration: none;
+   }
  #aboutus,#faqs,#contact{
     float: left;
     display: block;
