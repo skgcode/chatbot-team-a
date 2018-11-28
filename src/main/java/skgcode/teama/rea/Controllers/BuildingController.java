@@ -8,7 +8,7 @@ import skgcode.teama.rea.Service.BuildingService;
 import java.util.List;
 
 @RestController
-public class BuildingController extends ApiController {
+public class BuildingController implements ApiController {
 
     @Autowired
     private BuildingService buildingService;
@@ -43,13 +43,24 @@ public class BuildingController extends ApiController {
         return buildingService.getBuildingsBySquareMeters(squareMeters);
     }
 
-    @RequestMapping(value = "/building/query/priceYearSquaremeters",
+    // Retrieve results WHERE PRICE OR YEAR OR SQUARE_METERS
+    @RequestMapping(value = "/building/query/priceOrYearOrSquaremeters",
             params = {"price", "year", "squareMeters"},
             method = RequestMethod.GET)
-    public List<Building> getFilteredResults(@RequestParam("price") Float price, @RequestParam("year") Integer year,
+    public List<Building> getQueryWherePriceOrYearOrSquareMeters(@RequestParam("price") Float price, @RequestParam("year") Integer year,
                                              @RequestParam("squareMeters") Integer squareMeters) {
 
-        return buildingService.getFilteredBuildings(price, year, squareMeters);
+        return buildingService.getQueryWherePriceOrYearOrSquaremeters(price, year, squareMeters);
+    }
+
+    // Retrieve results WHERE PRICE AND YEAR AND SQUARE_METERS
+    @RequestMapping(value = "/building/query/priceAndYearAndSquaremeters",
+            params = {"price", "year", "squareMeters"},
+            method = RequestMethod.GET)
+    public List<Building> getQueryWherePriceAndYearAndSquareMeters(@RequestParam("price") Float price, @RequestParam("year") Integer year,
+                                             @RequestParam("squareMeters") Integer squareMeters) {
+
+        return buildingService.getQueryWherePriceAndYearAndSquaremeters(price, year, squareMeters);
     }
 
     // Retrieve results between a certain price range

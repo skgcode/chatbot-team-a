@@ -39,8 +39,9 @@ public class BuildingServiceImplementation implements BuildingService {
         return buildingRepository.findAll();
     }
 
+    // query WHERE PRICE OR YEAR OR SQUARE_METERS
     @Override
-    public List<Building> getFilteredBuildings(Float price, Integer year, Integer squareMeters) {
+    public List<Building> getQueryWherePriceOrYearOrSquaremeters(Float price, Integer year, Integer squareMeters) {
         if (price != null || year != null || squareMeters != null) {
             return buildingRepository.findAllByPriceOrYearOrSquareMeters(price, year, squareMeters);
         } else {
@@ -48,11 +49,23 @@ public class BuildingServiceImplementation implements BuildingService {
         }
     }
 
+    // query WHERE PRICE AND YEAR AND SQUARE_METERS
+    @Override
+    public List<Building> getQueryWherePriceAndYearAndSquaremeters(Float price, Integer year, Integer squareMeters) {
+        if (price != null || year != null || squareMeters != null) {
+            return buildingRepository.findAllByPriceAndYearAndSquareMeters(price, year, squareMeters);
+        } else {
+            return buildingRepository.findAllByPriceAndYearAndSquareMeters(0f, 0, 0);
+        }
+    }
+
+    // PRICE BETWEEN
     @Override
     public List<Building> getPriceRangeBetween(Float priceMin, Float priceMax) {
         return buildingRepository.findBuildingsByPriceBetweenMinAndMax(priceMin, priceMax);
     }
 
+    // YEAR BETWEEN
     @Override
     public List<Building> getYearRangeBetween(Integer yearMin, Integer yearMax) {
         return buildingRepository.findBuildingsByYearBetweenMinAndMax(yearMin, yearMax);
