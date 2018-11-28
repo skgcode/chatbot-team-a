@@ -1,0 +1,41 @@
+
+CREATE TABLE Region(
+	regionID INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(30),
+	PRIMARY KEY(regionID)
+	);
+	
+
+CREATE TABLE Building_Type(
+	typeID INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(20),
+	PRIMARY KEY(typeID)
+	);
+
+CREATE TABLE Transaction_Type(
+	type_transID INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(20),
+	PRIMARY KEY(type_transID)
+	);
+	
+CREATE TABLE Building(
+	id INT NOT NULL AUTO_INCREMENT,
+	typeID INT,
+	regionID INT,
+    	type_transID INT,
+	price FLOAT,
+	square_meters INT,
+	year INT,
+	floor INT,
+	heating  VARCHAR(20),
+	renovated BOOLEAN,
+	furnished BOOLEAN,
+	elevator BOOLEAN,
+	PRIMARY KEY(id),
+	FOREIGN KEY(typeID) REFERENCES Building_Type(typeID),
+   	FOREIGN KEY(regionID) REFERENCES Region(regionID),
+	FOREIGN KEY(type_transID) REFERENCES Transaction_Type(type_transID)
+	)
+
+	
+	
