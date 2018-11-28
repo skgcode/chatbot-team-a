@@ -1,39 +1,29 @@
-	<!-- Contact Form -->
-	<div class="container1">
-	  <div style="text-align:center">
-	    <h2 id="cntnct">Contact Us</h2>
-	    <p>Swing by for a cup of coffee, or leave us a message:</p>
-	  </div>
-	  <div class="row">
-	    <div class="column">
-        <img src="menus/contactmap.jpg" id="img" style="width: 90%;height: 500px">
-	      <!-- <div id="map" style="width:100%;height:500px"></div> -->
-	    </div>
-	    <div class="column">
-	      <form action="/action_page.php">
-	        <label for="fname"><b>First Name</b></label>
-	        <input type="text" id="fname" name="firstname" placeholder="Your name.." required="required">
-	        <label for="lname"><b>Last Name</b></label>
-	        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required="required">
-	        <label for="city"><b>City</b></label>
-	        <select id="city" name="city">
-	          <option value="thessaloniki">Thessaloniki</option>
-	          <option value="athens">Athens</option>
-	          <option value="Volos">Volos</option>
-	        </select>
-	        <label for="subject"><b>Subject</b></label>
-	        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-	        <input type="submit" value="Submit">
-	      </form>
-	    </div>
-	  </div>
+<!-- Contact Form -->
+<div class="container1">
+  <div style="text-align:center">
+    <h2 id="cntnct">Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
   </div>
-  
-  <!-- Script for maps | we don't have the api key -->
-  <!-- <script src="contact.js"></script> -->
-
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script> -->
-  <!--
-  To use this code on your website, get a free API key from Google.
-  Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-  -->
+  <div class="row">
+    <div class="column">
+      <img src="menus/contactmap.jpg" id="img" style="width: 90%;height: 500px">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required="required">
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required="required">
+        <label for="city"><b>City</b></label>
+        <select id="city" name="city">
+	        <option value="thessaloniki">Thessaloniki</option>
+	        <option value="athens">Athens</option>
+	        <option value="Volos">Volos</option>
+	      </select>
+	      <label for="subject"><b>Subject</b></label>
+	      <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+	      <input type="submit" value="Submit">
+	    </form>
+	  </div>
+	</div>
+</div>

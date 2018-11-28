@@ -1,57 +1,56 @@
 <!--New Form -->
 <div class="container1" style="margin-left: 25%; margin-right: 25%;">
-    <div style="text-align:center">
-      <h2 id="cntnct">Register your property</h2>
-      <p>fill in the form with your details</p>
+  <div style="text-align:center">
+    <h2 id="cntnct">Register your property</h2>
+    <p>fill in the form with your details</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <form action="/action_page.php" style="position:relative; left:55%;">
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required="required">
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required="required">
+        <label for="ename"><b>E-mail</b></label>
+        <input type="text" id="ename" name="email" placeholder="Your e-mail.." required="required">
+        <label for="pname"><b>Phone Number</b></label>
+        <input type="text" id="pname" name="phone" placeholder="Your phone number.." required="required">
+        <label for="city" style="margin-bottom:5px;"></label><b>City</b></label>
+        <select id="city" name="city" style="margin-bottom:5px;">
+          <option value="thessaloniki">Thessaloniki</option>
+          <option value="athens">Athens</option>
+          <option value="Volos">Volos</option>
+        </select><br>
+        <label for="type" style="margin-bottom:5px;"><b>Do you want to Sell or Rent:</b></label><br>
+          <input type="radio" name="type" value="sell" checked> Sell<br>
+          <input type="radio" name="type" value="rent">Rent<br>
+        <label for="typeHouse"><b>Type of House</b></label>
+        <select id="typeHouse" name="typeHouse">
+          <option value="Studio">Studio</option>
+          <option value="Flat">Flat</option>
+          <option value="house">House</option>
+        </select>
+        <label for="municipality"><b>Municipality</b></label>
+        <select id="municipality" name="municipality">
+          <option value="1">Thessaloniki-Center</option>
+          <option value="2">Kalamaria</option>
+          <option value="3">Pylaia</option>
+          <option value="4">Thermi</option>
+          <option value="5">Pavlos Melas</option>
+          <option value="6">Ampelokipoi-Menemeni</option>
+          <option value="7">Euosmos</option>
+          <option value="8">Oraiokastro</option>
+          <option value="9">Thermaikos</option>
+          <option value="10">Delta</option>
+          <option value="11">Neapoli-Sykies</option>
+        </select>
+        <label for="price"><b>Price of House(€)</b></label>
+        <input type="text" id="price" name="priceofhouse" placeholder="euro.." required="required">
+        <b>Upload a photo of your house:</b> <input type="file" name="myFile"><br>
+        <label for="description"><b>Description</b></label>
+        <textarea id="description" name="description" placeholder="Write some features of your property.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
     </div>
-    <div class="row">
-      <div class="column">
-        <form action="/action_page.php" style="position:relative; left:55%;">
-          <label for="fname"><b>First Name</b></label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name.." required="required">
-          <label for="lname"><b>Last Name</b></label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required="required">
-          <label for="ename"><b>E-mail</b></label>
-          <input type="text" id="ename" name="email" placeholder="Your e-mail.." required="required">
-          <label for="pname"><b>Phone Number</b></label>
-          <input type="text" id="pname" name="phone" placeholder="Your phone number.." required="required">
-          <label for="city" style="margin-bottom:5px;"></label><b>City</b></label>
-          <select id="city" name="city" style="margin-bottom:5px;">
-            <option value="thessaloniki">Thessaloniki</option>
-            <option value="athens">Athens</option>
-            <option value="Volos">Volos</option>
-          </select><br>
-          <label for="type" style="margin-bottom:5px;"><b>Do you want to Sell or Rent:</b></label><br>
-            <input type="radio" name="type" value="sell" checked> Sell<br>
-            <input type="radio" name="type" value="rent">Rent<br>
-          <label for="typeHouse"><b>Type of House</b></label>
-          <select id="typeHouse" name="typeHouse">
-            <option value="Studio">Studio</option>
-            <option value="Flat">Flat</option>
-            <option value="house">House</option>
-          </select>
-          <label for="municipality"><b>Municipality</b></label>
-          <select id="municipality" name="municipality">
-            <option value="1">Thessaloniki-Center</option>
-            <option value="2">Kalamaria</option>
-            <option value="3">Pylaia</option>
-            <option value="4">Thermi</option>
-            <option value="5">Pavlos Melas</option>
-            <option value="6">Ampelokipoi-Menemeni</option>
-            <option value="7">Euosmos</option>
-            <option value="8">Oraiokastro</option>
-            <option value="9">Thermaikos</option>
-            <option value="10">Delta</option>
-            <option value="11">Neapoli-Sykies</option>
-          </select>
-          <label for="price"><b>Price of House(€)</b></label>
-          <input type="text" id="price" name="priceofhouse" placeholder="euro.." required="required">
-          <b>Upload a photo of your house:</b> <input type="file" name="myFile"><br>
-
-          <label for="description"><b>Description</b></label>
-          <textarea id="description" name="description" placeholder="Write some features of your property.." style="height:170px"></textarea>
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-    </div>
+  </div>
 </div>

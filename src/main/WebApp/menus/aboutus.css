@@ -2,18 +2,18 @@ body {
     font-family: 'Abel', sans-serif !important;
     margin-right: 40px !important;
     margin-left: 40px !important;
-}
-ol{
-    /*display:table;*/
-    overflow: auto!important;
-    display: list-item!important;
-    list-style-type: decimal!important;
-    list-style-position: inside!important;
+} 
+
+ol {
+    overflow: auto !important;
+    display: list-item !important;
+    list-style-type: decimal !important;
+    list-style-position: inside !important;
 }
 
 .content {
-    margin-right: 40px!important;
-    margin-left: 40px!important;
+    margin-right: 40px !important;
+    margin-left: 40px !important;
 }
 
 #abt {
@@ -24,7 +24,7 @@ ol{
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px!important;
+    padding: 18px !important;
     width: 100%;
     border: none;
     text-align: left;
@@ -48,7 +48,7 @@ ol{
     color: #777;
     font-weight: bold;
     float: right;
-    margin-left: 5px!important;
+    margin-left: 5px !important;
 }
 
 .active:after {
@@ -63,6 +63,6 @@ ol{
     max-height: 0;
 }
 
-.color{
-    padding: 0%!important;
+.color {
+    padding: 0% !important;
 }

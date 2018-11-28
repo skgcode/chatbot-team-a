@@ -6,10 +6,12 @@ body {
 	margin-right: 40px;
 	margin-left: 40px;
 }
-.color{
-    color:black!important;
-    text-align:left!important;
+
+.color {
+    color:black !important;
+    text-align:left !important;
 }
+
 #abt {
     letter-spacing: 2px;
 }
@@ -37,7 +39,6 @@ body {
     color: black;
 }
 
-
 .active, .accordion:hover {
     background-color: #ccc;
 }
@@ -61,8 +62,3 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-
-/*#th {
-    overflow: auto !important;
-    height: 15em !important;
-}*/
