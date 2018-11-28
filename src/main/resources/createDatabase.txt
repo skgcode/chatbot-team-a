@@ -1,10 +1,9 @@
-
 CREATE TABLE Region(
 	regionID INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(30),
 	PRIMARY KEY(regionID)
 	);
-	
+
 
 CREATE TABLE Building_Type(
 	typeID INT NOT NULL AUTO_INCREMENT,
@@ -17,7 +16,7 @@ CREATE TABLE Transaction_Type(
 	name VARCHAR(20),
 	PRIMARY KEY(type_transID)
 	);
-	
+
 CREATE TABLE Building(
 	id INT NOT NULL AUTO_INCREMENT,
 	typeID INT,
@@ -36,6 +35,3 @@ CREATE TABLE Building(
    	FOREIGN KEY(regionID) REFERENCES Region(regionID),
 	FOREIGN KEY(type_transID) REFERENCES Transaction_Type(type_transID)
 	)
-
-	
-	
