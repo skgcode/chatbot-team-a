@@ -1,0 +1,100 @@
+﻿
+
+body {
+    margin-right: 40px !important;
+    margin-left: 40px !important;
+    font-family: 'Abel', sans-serif !important;
+    scroll-padding-block: inherit;
+}
+
+div.title {
+    text-align: left;
+}
+.search-button{
+  background: linear-gradient(135deg, #9ec2f9, #0010ca);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width:75px;
+  height:30px;
+  font-size: 15px;
+  font-family: 'Abel', sans-serif;
+}
+#form,.form-control{
+    width:175px;
+    list-style: none;
+    list-style-type: none;
+    padding:0% !important;
+}
+#form0{
+    width:75px!important;
+    list-style-type: none;
+    list-style: none;
+    padding:0;
+}
+
+#titlos {
+    font-size: 40px !important;
+    text-decoration: none;
+    color: black;
+    font-family: 'Rajdhani', sans-serif !important;
+    cursor: pointer;
+}
+
+.nav {
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding-left: 35% !important;
+    background-color: #333 !important;
+    letter-spacing: 2px;
+    text-align: center;
+    align-content: center;
+    border-radius: 5px;
+    font-size: 22px;
+}
+.dropdowns {
+    list-style: none;
+    list-style-type: none !important;
+    margin: 0 !important;
+    background-color: transparent!important;
+    border-radius: 5px;
+    font-size: 19px;
+    box-sizing: border-box;
+    border-style: groove;
+    border-top:hidden;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color: #333;
+    /*float:left;*/
+    display: inline-block;
+    color: black !important;
+    text-align: left;
+    text-decoration: none;
+    padding-left: 0!important;
+   }
+ #aboutus,#faqs,#contact,#property{
+    float: left;
+    display: block;
+    color: white !important;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+   #aboutus:hover, #faqs:hover, #contact:hover,#property:hover {
+        background-color: #111;
+       cursor: pointer;
+    }
+.site-main {
+    margin-bottom: 0em;
+}
+
+div.content-area {
+    margin-bottom: 0em;
+}
+
+div.page {
+    margin-bottom: 0em;
+}
