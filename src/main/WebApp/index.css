@@ -72,7 +72,7 @@ div.title {
     text-align: left;
     text-decoration: none;
    }
- #aboutus,#faqs,#contact{
+ #aboutus,#faqs,#contact,#property{
     float: left;
     display: block;
     color: white !important;
@@ -81,7 +81,7 @@ div.title {
     text-decoration: none;
 }
 
-   #aboutus:hover, #faqs:hover, #contact:hover {
+   #aboutus:hover, #faqs:hover, #contact:hover #property:hover {
         background-color: #111;
        cursor: pointer;
     }
