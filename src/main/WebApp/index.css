@@ -60,7 +60,7 @@ div.title {
     margin: 0 !important;
     background-color: transparent!important;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 19px;
     box-sizing: border-box;
     border-style: groove;
     border-top:hidden;
@@ -72,6 +72,7 @@ div.title {
     color: black !important;
     text-align: left;
     text-decoration: none;
+    padding-left: 0!important;
    }
  #aboutus,#faqs,#contact,#property{
     float: left;
