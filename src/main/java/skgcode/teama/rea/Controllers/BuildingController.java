@@ -1,9 +1,7 @@
 package skgcode.teama.rea.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import skgcode.teama.rea.Model.Building;
 import skgcode.teama.rea.Service.BuildingService;
 
@@ -16,8 +14,8 @@ public class BuildingController extends ApiController {
     private BuildingService buildingService;
 
     // Retrieve all
-    @RequestMapping(value = "/getAllHouses")
-    public List<Building> getAllHouses() {
+    @RequestMapping(value = "/building/getAllBuildings")
+    public List<Building> getAllBuildings() {
         return buildingService.getAllBuildings();
     }
 
@@ -30,25 +28,47 @@ public class BuildingController extends ApiController {
     // Retrieve by price
     @RequestMapping("/building/price/{price}")
     public List<Building> getByPrice(@PathVariable float price) {
-        return buildingService.getBuildingByPrice(price);
+        return buildingService.getBuildingsByPrice(price);
     }
 
     // Retrieve by year
     @RequestMapping("/building/year/{year}")
     public List<Building> getByYear(@PathVariable Integer year) {
-        return buildingService.getBuildingByYear(year);
+        return buildingService.getBuildingsByYear(year);
     }
 
     // Retrieve by square meters
     @RequestMapping("/building/squareMeters/{squareMeters}")
     public List<Building> getBySquareMeters(@PathVariable Integer squareMeters) {
-        return buildingService.getBuildingBySquareMeters(squareMeters);
+        return buildingService.getBuildingsBySquareMeters(squareMeters);
     }
 
-    @RequestMapping("/building/query/{price}-{year}-{squareMeters}")
-    public List<Building> getFilteredResults(@PathVariable Float price, @PathVariable Integer year,
-                                             @PathVariable Integer squareMeters) {
+    @RequestMapping(value = "/building/query/priceYearSquaremeters",
+            params = {"price", "year", "squareMeters"},
+            method = RequestMethod.GET)
+    public List<Building> getFilteredResults(@RequestParam("price") Float price, @RequestParam("year") Integer year,
+                                             @RequestParam("squareMeters") Integer squareMeters) {
 
         return buildingService.getFilteredBuildings(price, year, squareMeters);
+    }
+
+    // Retrieve results between a certain price range
+    @RequestMapping(value = "/building/query/pricerange",
+            params = {"min", "max"},
+            method = RequestMethod.GET)
+    @ResponseBody
+    public List<Building> getPriceRangeBetween(@RequestParam("min") Float min,
+                                               @RequestParam("max") Float max) {
+
+        return buildingService.getPriceRangeBetween(min, max);
+    }
+
+    // Retrieve results between a certain year range
+    @RequestMapping(value = "/building/query/yearrange",
+            params = {"min", "max"},
+            method = RequestMethod.GET)
+    public List<Building> getYearRangeBetween(@RequestParam("min") Integer min,
+                                              @RequestParam("max") Integer max) {
+        return buildingService.getYearRangeBetween(min, max);
     }
 }

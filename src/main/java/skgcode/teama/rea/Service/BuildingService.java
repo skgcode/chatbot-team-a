@@ -8,13 +8,17 @@ public interface BuildingService {
 
     Building getBuildingById(Integer id);
 
-    List<Building> getBuildingByPrice(Float price);
+    List<Building> getBuildingsByPrice(Float price);
 
-    List<Building> getBuildingByYear(Integer year);
+    List<Building> getBuildingsByYear(Integer year);
 
-    List<Building> getBuildingBySquareMeters(Integer sqMeters);
+    List<Building> getBuildingsBySquareMeters(Integer sqMeters);
 
     List<Building> getAllBuildings();
 
     List<Building> getFilteredBuildings(Float price, Integer year, Integer squareMeters);
+
+    List<Building> getPriceRangeBetween(Float priceMin, Float priceMax);
+
+    List<Building> getYearRangeBetween(Integer yearMin, Integer yearMax);
 }

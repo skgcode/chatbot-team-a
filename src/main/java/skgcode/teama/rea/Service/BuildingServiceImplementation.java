@@ -19,18 +19,18 @@ public class BuildingServiceImplementation implements BuildingService {
     }
 
     @Override
-    public List<Building> getBuildingByPrice(Float price) {
+    public List<Building> getBuildingsByPrice(Float price) {
         return buildingRepository.findBuildingByPrice(price);
     }
 
 
     @Override
-    public List<Building> getBuildingByYear(Integer year) {
+    public List<Building> getBuildingsByYear(Integer year) {
         return buildingRepository.findBuildingByYear(year);
     }
 
     @Override
-    public List<Building> getBuildingBySquareMeters(Integer sqMeters) {
+    public List<Building> getBuildingsBySquareMeters(Integer sqMeters) {
         return buildingRepository.findBuildingBySquareMeters(sqMeters);
     }
 
@@ -41,10 +41,22 @@ public class BuildingServiceImplementation implements BuildingService {
 
     @Override
     public List<Building> getFilteredBuildings(Float price, Integer year, Integer squareMeters) {
-        if(price != null || year != null || squareMeters != null) {
+        if (price != null || year != null || squareMeters != null) {
             return buildingRepository.findAllByPriceOrYearOrSquareMeters(price, year, squareMeters);
         } else {
             return buildingRepository.findAllByPriceOrYearOrSquareMeters(0f, 0, 0);
         }
     }
+
+    @Override
+    public List<Building> getPriceRangeBetween(Float priceMin, Float priceMax) {
+        return buildingRepository.findBuildingsByPriceBetweenMinAndMax(priceMin, priceMax);
+    }
+
+    @Override
+    public List<Building> getYearRangeBetween(Integer yearMin, Integer yearMax) {
+        return buildingRepository.findBuildingsByYearBetweenMinAndMax(yearMin, yearMax);
+    }
+
+
 }
