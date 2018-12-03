@@ -19,6 +19,8 @@ public class Building {
     private Region region;
     @ManyToOne
     private TransactionType transactionType;
+    @OneToOne
+    private Photo photo;
 
     private Float price;
     private Integer squareMeters;
@@ -28,6 +30,14 @@ public class Building {
     private Boolean renovated;
     private Boolean furnished;
     private Boolean elevator;
+
+    public Photo getPhoto(){
+        return this.photo;
+    }
+
+    public void setPhoto(Photo photo){
+        this.photo = photo;
+    }
 
     public Integer getId() {
         return id;

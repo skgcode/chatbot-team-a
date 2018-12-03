@@ -34,7 +34,7 @@
     </ul>
     <ul class="dropdowns" style="width: 100%;border-color: #333;margin: 0">
         <div class="container">
-            <form class="form-inline" onsubmit="return false" style="height:50px; padding-top: 8px;width:1340px;margin-left:-8%">
+            <form class="form-inline" onsubmit="return false" style="height:50px; padding-top: 8px;width:1550px;margin-left: -18%;">
                 City: &emsp;<!--Only Thessaloniki is going to work; the other cities should remain disabled -->
                 <select id="form" class="form-control city" name="city">
                     <option selected="selected" disabled="disabled">-Select a city-</option>
@@ -65,6 +65,12 @@
                     <option value="1">Studio</option>
                     <option value="2">Flat</option>
                     <option value="3">House</option>
+                </select>&emsp;
+                Transaction type: &emsp;
+                <select class="form-control transaction" id="form" name="transaction">
+                    <option selected="selected" disabled="disabled">-Select a transaction-</option>
+                    <option value="1">Buy</option>
+                    <option value="2">Rent</option>
                 </select>&emsp;
                 Price: &emsp;
                     <select class="form-control priceMin" id="form0" name="priceMin">
