@@ -27,4 +27,8 @@ public interface BuildingService {
     List<Building> getPriceRangeBetween(Float priceMin, Float priceMax);
 
     List<Building> getYearRangeBetween(Integer yearMin, Integer yearMax);
+
+    List<Building> getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndYearBetween(String region, String buildingType,
+                                                                                      String transactionType, Integer priceMin,
+                                                                                      Integer priceMax);
 }

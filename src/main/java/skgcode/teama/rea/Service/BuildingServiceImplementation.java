@@ -1,12 +1,11 @@
 package skgcode.teama.rea.Service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import skgcode.teama.rea.Model.Building;
 import skgcode.teama.rea.Repository.BuildingRepository;
+
+import java.util.List;
 
 @Service
 public class BuildingServiceImplementation implements BuildingService {
@@ -73,12 +72,20 @@ public class BuildingServiceImplementation implements BuildingService {
     }
 
     @Override
-    public List<Building> getQueryWherePriceRangeOrYearOrSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters){
+    public List<Building> getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndYearBetween(String region, String buildingType,
+                                                                                             String transactionType, Integer priceMin,
+                                                                                             Integer priceMax) {
+        return buildingRepository.findBuildingsByPriceBetweenAndRegionAndTransactionTypeAndType(region, buildingType, transactionType,
+                priceMin, priceMax);
+    }
+
+    @Override
+    public List<Building> getQueryWherePriceRangeOrYearOrSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters) {
         return buildingRepository.findAllByPriceRangeOrYearOrSquareMeters(priceMin, priceMax, year, squareMeters);
     }
 
     @Override
-    public List<Building> getQueryWherePriceRangeAndYearAndSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters){
+    public List<Building> getQueryWherePriceRangeAndYearAndSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters) {
         return buildingRepository.findAllByPriceRangeAndYearAndSquareMeters(priceMin, priceMax, year, squareMeters);
     }
 }

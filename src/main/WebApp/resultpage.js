@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function sendRequest() {
     $.ajax({
-    url: "/getAllHouses"
+    url: "rea/building/getAllBuildings"
  }).then(function(data) {
     $.each(data, function (key, entry) {
         var block0 = document.createElement("div");
