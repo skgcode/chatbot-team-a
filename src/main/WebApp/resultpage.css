@@ -2,5 +2,12 @@
     vertical-align: middle;
     color: black;
     background-color: #f4f4f4;
+    border:none;
     border-radius: 20px;
+    font-family: Abel,sans-serif;
+    font-size: 16px;
+}
+pre{
+    border:none;
+    font-family: Abel,sans-serif;
 }
