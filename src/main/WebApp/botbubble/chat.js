@@ -87,4 +87,22 @@ function fakeMessage() {
    });
    $('<div class="message loading new"><figure class="avatar"><img src="botbubble/rea.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
    updateScrollbar();
+
+    setTimeout(function () {
+        $('.message.loading').remove();
+        //put bot's answer in window
+        if (respText.match(/.*result.*/gi)) { // recognize the result word and it will be link
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="resultpage.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        } else if (respText.match(/.*sell.*/gi)) { // recognize the sell word and it will be link
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="newform.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        } else { // any other word it will be bubble, not link
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        }
+        setDate();
+        updateScrollbar();
+        //i++;
+    }, 1000 + (Math.random() * 20) * 100);
 }
