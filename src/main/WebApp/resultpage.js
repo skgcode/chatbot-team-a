@@ -1,8 +1,11 @@
 $(document).ready(function sendRequest() {
     $.ajax({
-        url: "/rea/building/query/pricerange",
-        data: {"min":$(".priceMin").val(),
-            "max":$(".priceMax").val()}
+        url: "/rea/building/query/regionAndBuildingTypeAndTransactionTypeAndPriceRange",
+        data: {"region":region,
+            "buildingType":buildingType,
+            "transactionType": transactionType,
+            "priceMin":priceMin,
+            "priceMax":priceMax}
     }).then(function getData(data) {
         if(data.length===0){
             var block0= document.createElement("div");

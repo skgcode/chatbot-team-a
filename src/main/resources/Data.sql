@@ -1,10 +1,10 @@
-INSERT INTO REGION (name) VALUES ('center');
-INSERT INTO REGION (name) VALUES ('kalamaria');
-INSERT INTO REGION (name) VALUES ('pylaia');
-INSERT INTO REGION (name) VALUES ('evosmos');
-INSERT INTO REGION (name) VALUES ('oraiokastro');
-INSERT INTO REGION (name) VALUES ('thermi');
-INSERT INTO REGION (name) VALUES ('neapoli');
+INSERT INTO REGION (name) VALUES ('Center');
+INSERT INTO REGION (name) VALUES ('Kalamaria');
+INSERT INTO REGION (name) VALUES ('Pylaia');
+INSERT INTO REGION (name) VALUES ('Evosmos');
+INSERT INTO REGION (name) VALUES ('Oraiokastro');
+INSERT INTO REGION (name) VALUES ('Thermi');
+INSERT INTO REGION (name) VALUES ('Neapoli');
 
 INSERT INTO BUILDING_TYPE (name) VALUES ('studios');
 INSERT INTO BUILDING_TYPE (name) VALUES ('flat');

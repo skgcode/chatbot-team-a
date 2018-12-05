@@ -14,216 +14,226 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--chatbot-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
+    <link rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://static.cloud.coveo.com/searchui/v1.2537/js/CoveoJsSearch.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="test.js"></script>
 </head>
 <body style="overflow-y: scroll">
-    <div class="title">
-        <!-- klasi gia ton titlo -->
-        <h1 id="titlos">vriskospiti.gr</h1>
+<div class="title">
+    <!-- klasi gia ton titlo -->
+    <h1 id="titlos">vriskospiti.gr</h1>
+</div>
+<!-- Kentriko menu -->
+<ul class="nav">
+    <!-- klasi gia to menu -->
+    <li id="aboutus">About Us</li>
+    <li id="faqs">FAQs</li>
+    <li id="contact">Contact</li>
+    <li id="property">List your property</li>
+</ul>
+<ul class="dropdowns" style="width: 100%;border-color: #333;margin: 0">
+    <div class="container">
+        <form class="form-inline" onsubmit="return false"
+              style="height:50px; padding-top: 8px;width:1340px;margin-left:-8%">
+            City: &emsp;<!--Only Thessaloniki is going to work; the other cities should remain disabled -->
+            <select id="form" class="form-control city" name="city">
+                <option selected="selected" disabled="disabled">-Select a city-</option>
+                <option value="1">Thessaloniki</option>
+                <option value="2" disabled="disabled">Athens</option>
+                <option value="3" disabled="disabled">Heraklion</option>
+                <option value="4" disabled="disabled">Volos</option>
+                <option value="5" disabled="disabled">Ioannina</option>
+            </select> &emsp;
+            Municipality: &emsp;
+            <select id="form" class="form-control region" name="region">
+                <option selected="selected" disabled="disabled">-Select a municipality-</option>
+                <option value="1">Thessaloniki-Center</option>
+                <option value="2">Kalamaria</option>
+                <option value="3">Pylaia</option>
+                <option value="4">Thermi</option>
+                <option value="5">Pavlos Melas</option>
+                <option value="6">Ampelokipoi-Menemeni</option>
+                <option value="7">Euosmos</option>
+                <option value="8">Oraiokastro</option>
+                <option value="9">Thermaikos</option>
+                <option value="10">Delta</option>
+                <option value="11">Neapoli-Sykies</option>
+            </select> &emsp;
+            Apartment type: &emsp;
+            <select class="form-control buildingType" id="form" name="buildingType">
+                <option selected="selected" disabled="disabled">-Select an apartment type-</option>
+                <option value="1">Studio</option>
+                <option value="2">Flat</option>
+                <option value="3">House</option>
+            </select>&emsp;
+            Price: &emsp;
+            <select class="form-control priceMin" id="form0" name="priceMin">
+                <option selected="selected" disabled="disabled">-min-</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+                <option value="3000">3000</option>
+                <option value="5000">5000</option>
+                <option value="10000">10000</option>
+                <option value="30000">30000</option>
+                <option value="50000">50000</option>
+                <option value="100000">100000</option>
+                <option value="200000">200000</option>
+                <option value="300000">300000</option>
+                <option value="400000">400000</option>
+            </select>
+            <span>to</span>
+            <select class="form-control priceMax" id="form0" name="priceMax">
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+                <option value="3000">3000</option>
+                <option value="5000">5000</option>
+                <option value="10000">10000</option>
+                <option value="30000">30000</option>
+                <option value="50000">50000</option>
+                <option value="100000">100000</option>
+                <option value="200000">200000</option>
+                <option value="300000">300000</option>
+                <option value="400000">400000</option>
+                <option selected="selected" disabled="disabled">-max-</option>
+            </select>
+            </select> &emsp;
+            <button id="form" class="search-button" type="submit" value="submit" style="width:75px;">Let's Go!</button>
+            </li> <!--later, this should actually work-->
+        </form>
     </div>
-    <!-- Kentriko menu -->
-    <ul class="nav">
-        <!-- klasi gia to menu -->
-        <li id="aboutus">About Us</li>
-        <li id="faqs">FAQs</li>
-        <li id="contact">Contact</li>
-        <li id="property">List your property</li>
-    </ul>
-    <ul class="dropdowns" style="width: 100%;border-color: #333;margin: 0">
-        <div class="container">
-            <form class="form-inline" onsubmit="return false" style="height:50px; padding-top: 8px;width:1340px;margin-left:-8%">
-                City: &emsp;<!--Only Thessaloniki is going to work; the other cities should remain disabled -->
-                <select id="form" class="form-control city" name="city">
-                    <option selected="selected" disabled="disabled">-Select a city-</option>
-                    <option value="1" >Thessaloniki</option>
-                    <option value="2" disabled="disabled">Athens</option>
-                    <option value="3" disabled="disabled">Heraklion</option>
-                    <option value="4" disabled="disabled">Volos</option>
-                    <option value="5" disabled="disabled">Ioannina</option>
-                </select> &emsp;
-                Municipality: &emsp;
-                <select id="form" class="form-control municipality" name="municipality">
-                    <option selected="selected" disabled="disabled">-Select a municipality-</option>
-                    <option value="1">Thessaloniki-Center</option>
-                    <option value="2">Kalamaria</option>
-                    <option value="3">Pylaia</option>
-                    <option value="4">Thermi</option>
-                    <option value="5">Pavlos Melas</option>
-                    <option value="6">Ampelokipoi-Menemeni</option>
-                    <option value="7">Euosmos</option>
-                    <option value="8">Oraiokastro</option>
-                    <option value="9">Thermaikos</option>
-                    <option value="10">Delta</option>
-                    <option value="11">Neapoli-Sykies</option>
-                </select> &emsp;
-                Apartment type: &emsp;
-                <select class="form-control type" id="form" name="type">
-                    <option selected="selected" disabled="disabled">-Select an apartment type-</option>
-                    <option value="1">Studio</option>
-                    <option value="2">Flat</option>
-                    <option value="3">House</option>
-                </select>&emsp;
-                Price: &emsp;
-                    <select class="form-control priceMin" id="form0" name="priceMin">
-                            <option selected="selected" disabled="disabled">-min-</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="200">200</option>
-                            <option value="300">300</option>
-                            <option value="500">500</option>
-                            <option value="1000">1000</option>
-                            <option value="2000">2000</option>
-                            <option value="3000">3000</option>
-                            <option value="5000">5000</option>
-                            <option value="10000">10000</option>
-                            <option value="30000">30000</option>
-                            <option value="50000">50000</option>
-                            <option value="100000">100000</option>
-                            <option value="200000">200000</option>
-                            <option value="300000">300000</option>
-                            <option value="400000">400000</option>
-                        </select> 
-                        <span>to</span>
-                        <select class="form-control priceMax" id="form0" name="priceMax">
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="200">200</option>
-                            <option value="300">300</option>
-                            <option value="500">500</option>
-                            <option value="1000">1000</option>
-                            <option value="2000">2000</option>
-                            <option value="3000">3000</option>
-                            <option value="5000">5000</option>
-                            <option value="10000">10000</option>
-                            <option value="30000">30000</option>
-                            <option value="50000">50000</option>
-                            <option value="100000">100000</option>
-                            <option value="200000">200000</option>
-                            <option value="300000">300000</option>
-                            <option value="400000">400000</option>
-                            <option selected="selected" disabled="disabled">-max-</option>
-                        </select>
-                    </select> &emsp;
-                <button id="form" class="search-button" type="submit" value="submit" style="width:75px;">Let's Go!</button></li> <!--later, this should actually work-->
-            </form>
+</ul>
+<!-- load all the other files -->
+<div id="webpage" style="margin-top: 5%"></div>
+<!-- button for the bubble -->
+<button class="open-button" style="position:fixed" onclick="openForm()">You need help? Ask Me!</button>
+<!-- popup form for messages -->
+<div class="chat-popup" id="myForm">
+    <div class="chat">
+        <button type="button" class="cancel" onclick="closeForm()">X</button>
+        <div class="chat-title">
+            <h1>Rea</h1>
+            <h2>Support</h2>
+            <figure class="avatar">
+                <img src="botbubble/rea.png">
+            </figure>
         </div>
-    </ul>
-    <!-- load all the other files -->
-    <div id="webpage" style="margin-top: 5%"></div>
-    <!-- button for the bubble -->
-    <button class="open-button" style="position:fixed" onclick="openForm()">You need help? Ask Me!</button>
-    <!-- popup form for messages -->
-    <div class="chat-popup" id="myForm">
-        <div class="chat">
-            <button type="button" class="cancel" onclick="closeForm()">X</button>
-            <div class="chat-title">
-                <h1>Rea</h1>
-                <h2>Support</h2>
-                <figure class="avatar">
-                    <img src="botbubble/rea.png">
-                </figure>
-            </div>
-            <div class="messages">
-                <div class="messages-content"></div>
-            </div>
-            <div class="message-box">
-                <textarea type="text" class="message-input" placeholder="Type message..." style="padding: 0;"></textarea>
-                <button type="submit" class="message-submit">Send</button>
-            </div>
+        <div class="messages">
+            <div class="messages-content"></div>
         </div>
-        <div class="bg"></div>
+        <div class="message-box">
+            <textarea type="text" class="message-input" placeholder="Type message..." style="padding: 0;"></textarea>
+            <button type="submit" class="message-submit">Send</button>
+        </div>
     </div>
-    <section id="filler" style="height:19em; overflow:auto;"></section>
-    <!-- footer -->
-    <footer class="page-footer">
+    <div class="bg"></div>
+</div>
+<section id="filler" style="height:19em; overflow:auto;"></section>
+<!-- footer -->
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Find Us!</h5>
+                <a href="https://el-gr.facebook.com/" class="fa fa-facebook" style="text-decoration:none;"></a>
+                <a href="https://twitter.com/" class="fa fa-twitter" style="text-decoration:none;"></a>
+                <a href="https://plus.google.com/u/0/discover" class="fa fa-google" style="text-decoration:none;"></a>
+                <a href="https://www.linkedin.com/" class="fa fa-linkedin" style="text-decoration:none;"></a>
+                <a href="https://www.instagram.com/" class="fa fa-instagram" style="text-decoration:none;"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer copyright-->
+    <div class="footer-copyright">
         <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Find Us!</h5>
-                    <a href="https://el-gr.facebook.com/" class="fa fa-facebook" style="text-decoration:none;"></a>
-                    <a href="https://twitter.com/" class="fa fa-twitter" style="text-decoration:none;"></a>
-                    <a href="https://plus.google.com/u/0/discover" class="fa fa-google" style="text-decoration:none;"></a>
-                    <a href="https://www.linkedin.com/" class="fa fa-linkedin" style="text-decoration:none;"></a>
-                    <a href="https://www.instagram.com/" class="fa fa-instagram" style="text-decoration:none;"></a>
-                </div>
-            </div>
+            &copy; 2018 Copyright Team-a | <a class="skgcode" href="http://www.skgcode.gr/"
+                                              style="text-decoration:none;">skg.code</a>
+            <a class="grey-text text-lighten-4 right" href="#!" style="text-decoration:none;">Privacy Policy</a>
         </div>
-        <!-- Footer copyright-->
-        <div class="footer-copyright">
-            <div class="container">
-                &copy; 2018 Copyright Team-a | <a class="skgcode" href="http://www.skgcode.gr/" style="text-decoration:none;">skg.code</a>
-                <a class="grey-text text-lighten-4 right" href="#!" style="text-decoration:none;">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
-    <!--For chatbot-->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
-    <!-- botbubble.js code -->
-    <script src="botbubble/chat.js"></script>
-    <!-- code for open form of chatbot -->
-    <script>
-        function openForm() {
-            document.getElementById("myForm").style.display = "block";
-        }
+    </div>
+</footer>
+<!--For chatbot-->
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+<!-- botbubble.js code -->
+<script src="botbubble/chat.js"></script>
+<!-- code for open form of chatbot -->
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
 
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
-        }
-    </script>
-    <!-- Load the other files -->
-    <script>
-        $("#aboutus").click(function () {
-            document.title = "About Us";
-            $("#webpage").empty();
-            $('link[href="/menus/faqpage.css"]').prop('disabled', false);
-            $('#webpage').load('menus/about-us.html');
-        });
-    </script>
-    <script>
-        $("#faqs").click(function () {
-            document.title = "FAQs";
-            $("#webpage").empty();
-            $('link[href="/menus/faqpage.css"]').prop('disabled', false);
-            $('#webpage').load('menus/faqpage.html');
-        });
-    </script>
-    <script>
-        $("#contact").click(function () {
-            document.title = "Contact";
-            $("#webpage").empty();
-            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
-            $('#webpage').load('menus/contact.html');
-        });
-    </script>
-    <script>
-        $("#titlos").click(function () {
-            document.title = "vriskospiti.gr";
-            $("#webpage").empty();
-            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
-            $('#webpage').load('carousel.html');
-        });
-    </script>
-     <script>
-        $("#property").click(function () {
-            document.title = "List your property";
-            $("#webpage").empty();
-            $('link[href="/menus/faqpage.css"]').prop('disabled', true);
-            $('#webpage').load('newform.html');
-        });
-    </script>
-    <script>
-        $(".search-button").click(function (){
-            document.title="Results";
-            var min=$(".priceMin").val();
-            var max=$(".priceMax").val();
-            $("#webpage").empty();
-            $("#webpage").load("resultpage.html");
-
-        })
-    </script>
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+<!-- Load the other files -->
+<script>
+    $("#chatResult").click(function () {
+        document.title = "Chat result";
+        $("#webpage").empty();
+        $('link[href="/menus/faqpage.css"]').prop('disabled', false);
+        $('#webpage').load('chatResult.html');
+    });
+</script>
+<script>
+    $("#aboutus").click(function () {
+        document.title = "About Us";
+        $("#webpage").empty();
+        $('link[href="/menus/faqpage.css"]').prop('disabled', false);
+        $('#webpage').load('menus/about-us.html');
+    });
+</script>
+<script>
+    $("#faqs").click(function () {
+        document.title = "FAQs";
+        $("#webpage").empty();
+        $('link[href="/menus/faqpage.css"]').prop('disabled', false);
+        $('#webpage').load('menus/faqpage.html');
+    });
+</script>
+<script>
+    $("#contact").click(function () {
+        document.title = "Contact";
+        $("#webpage").empty();
+        $('link[href="/menus/faqpage.css"]').prop('disabled', true);
+        $('#webpage').load('menus/contact.html');
+    });
+</script>
+<script>
+    $("#titlos").click(function () {
+        document.title = "vriskospiti.gr";
+        $("#webpage").empty();
+        $('link[href="/menus/faqpage.css"]').prop('disabled', true);
+        $('#webpage').load('carousel.html');
+    });
+</script>
+<script>
+    $("#property").click(function () {
+        document.title = "List your property";
+        $("#webpage").empty();
+        $('link[href="/menus/faqpage.css"]').prop('disabled', true);
+        $('#webpage').load('newform.html');
+    });
+</script>
+<script>
+    $(".search-button").click(function () {
+        document.title = "Results";
+        $("#webpage").empty();
+        $("#webpage").load("resultpage.html");
+    })
+</script>
 </body>
 </html>
