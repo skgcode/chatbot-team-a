@@ -1,4 +1,4 @@
-.coveo-result-frame .coveo-result-cell > *, .CoveoResult.coveo-result-frame .coveo-result-cell > * {
+CoveoResult {
     vertical-align: middle;
     color: black;
     background-color: #f4f4f4;
@@ -7,6 +7,13 @@
     font-family: Abel,sans-serif;
     font-size: 16px;
 }
+/* span{
+    margin-left: 220px!important;
+    width: 100%;
+    display: table-row!important;
+    row-gap: normal;
+} */
+
 pre{
     border:none;
     font-family: Abel,sans-serif;

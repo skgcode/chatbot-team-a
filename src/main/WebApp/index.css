@@ -61,13 +61,18 @@ div.title {
     font-size: 22px;
 }
 
+#to{
+    width: 100%;
+    row-gap: normal;
+}
+
 .dropdowns {
     list-style: none;
     list-style-type: none !important;
     margin: 0 !important;
     /* background-color: transparent !important; */
     border-radius: 5px;
-    font-size: 19px;
+    font-size: 16px;
     box-sizing: border-box;
     border-style: groove;
     border-top: hidden;

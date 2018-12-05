@@ -8,7 +8,7 @@ var accessToken = "85334df769aa486bbb24cecd4eac338a";
 //url του dialogflow api
 var baseUrl = "https://api.dialogflow.com/v1/";
 
-//φορτωση 1ου μηνυματος (δεν δουλευει)
+// loading the first message
 $(window).load(function () {
     $messages.mCustomScrollbar();
     setTimeout(function () {
@@ -80,14 +80,6 @@ function fakeMessage() {
         success: function (data) {
             //take bot's answer in 'respText' variable
             respText = data.result.fulfillment.speech;
-            contexts = data.result.contexts;
-            for (i = 0; i < contexts.length; i++) {
-                if(i === 0) {
-                    test = contexts[i].parameters;
-                }
-               // console.log(contexts[i].name);
-               // console.log(contexts[i].parameters.Region);
-            }
         },
         error: function () {
             return false;
@@ -99,10 +91,13 @@ function fakeMessage() {
     setTimeout(function () {
         $('.message.loading').remove();
         //put bot's answer in window
-        if (respText.match(/.*result.*/gi)) {
-            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
-            sendRequest(test);
-        } else {
+        if (respText.match(/.*result.*/gi)) { // recognize the result word and it will be link
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="resultpage.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        } else if (respText.match(/.*sell.*/gi)) { // recognize the sell word and it will be link
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="newform.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+        } else { // any other word it will be bubble, not link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
         }
