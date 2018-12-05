@@ -8,7 +8,7 @@ var accessToken = "85334df769aa486bbb24cecd4eac338a";
 //url του dialogflow api
 var baseUrl = "https://api.dialogflow.com/v1/";
 
-//φορτωση 1ου μηνυματος (δεν δουλευει)
+// loading the first message
 $(window).load(function () {
     $messages.mCustomScrollbar();
     setTimeout(function () {
@@ -91,13 +91,16 @@ function fakeMessage() {
     setTimeout(function () {
         $('.message.loading').remove();
         //put bot's answer in window
-        if (respText.match(/.*result.*/gi)) {
+        if (respText.match(/.*result.*/gi)) { //recognize the result word and it will be link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="resultpage.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
-        } else {
+        } else if (respText.match(/.*sell.*/gi)) { //recognize the sell word and it will be link
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="newform.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+       
+        } else { // any other word will be just bubble, not link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
-        }
+        } 
         setDate();
         updateScrollbar();
         //i++;
