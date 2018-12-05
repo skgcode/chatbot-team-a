@@ -1,16 +1,16 @@
-function sendRequest(test) {
+function sendRequest(contexts) {
 
-    // console.log(test.Region[0]);
+    // console.log(contexts.Region[0]);
     // console.log();
     // console.log();
     // console.log();
     $.ajax({
         url: "/rea/building/query/regionAndBuildingTypeAndTransactionTypeAndPriceRange",
-        data: {"region":test.Region[0],
-            "buildingType":test.Types[0],
-            "transactionType": test.desire,
-            "priceMin":100,
-            "priceMax":300000}
+        data: {"region":contexts.Region[0],
+            "buildingType":contexts.Types[0],
+            "transactionType": contexts.desire,
+            "priceMin":0,
+            "priceMax":999999}
     }).then(function getData(data) {
         if(data.length===0){
             var block0= document.createElement("div");

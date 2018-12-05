@@ -2,6 +2,9 @@ var $messages = $('.messages-content'),
     d, h, m,
     i = 0;
 
+
+var contexts=[];
+
 // accessToken του botακιου
 var accessToken = "85334df769aa486bbb24cecd4eac338a";
 
@@ -80,6 +83,7 @@ function fakeMessage() {
         success: function (data) {
             //take bot's answer in 'respText' variable
             respText = data.result.fulfillment.speech;
+            contexts = data.result.contexts;
         },
         error: function () {
             return false;
@@ -92,11 +96,10 @@ function fakeMessage() {
         $('.message.loading').remove();
         //put bot's answer in window
         if (respText.match(/.*result.*/gi)) { // recognize the result word and it will be link
-            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="resultpage.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
-
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+            sendRequest(contexts);
         } else if (respText.match(/.*sell.*/gi)) { // recognize the sell word and it will be link
-            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + '<a href="newform.html" style="color: white;">' + respText + '</a> ' + '</div>').appendTo($('.mCSB_container')).addClass('new');
-
+            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
         } else { // any other word it will be bubble, not link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
