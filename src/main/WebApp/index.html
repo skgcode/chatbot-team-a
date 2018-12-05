@@ -47,30 +47,30 @@
                 Municipality: &emsp;
                 <select id="form" class="form-control municipality" name="municipality">
                     <option selected="selected" disabled="disabled">-Select a municipality-</option>
-                    <option value="1">Thessaloniki-Center</option>
-                    <option value="2">Kalamaria</option>
-                    <option value="3">Pylaia</option>
-                    <option value="4">Thermi</option>
-                    <option value="5">Pavlos Melas</option>
-                    <option value="6">Ampelokipoi-Menemeni</option>
-                    <option value="7">Euosmos</option>
-                    <option value="8">Oraiokastro</option>
-                    <option value="9">Thermaikos</option>
-                    <option value="10">Delta</option>
-                    <option value="11">Neapoli-Sykies</option>
+                    <option value="center">Thessaloniki-Center</option>
+                    <option value="kalamaria">Kalamaria</option>
+                    <option value="pylaia">Pylaia</option>
+                    <option value="evosmos">Evosmos</option>
+                    <option value="oraiokastro">Oraiokastro</option>
+                    <option value="thermi">Thermi</option>
+                    <option value="neapoli">Neapoli-Sykies</option>
+                    <option value="ampelokipoi">Ampelokipoi-Menemeni</option>
+                    <option value="pavlos-melas">Pavlos Melas</option>
+                    <option value="thermaikos">Thermaikos</option>
+                    <option value="delta">Delta</option>
                 </select> &emsp;
                 Apartment type: &emsp;
                 <select class="form-control type" id="form" name="type">
                     <option selected="selected" disabled="disabled">-Select an apartment type-</option>
-                    <option value="1">Studio</option>
-                    <option value="2">Flat</option>
-                    <option value="3">House</option>
+                    <option value="studios">Studio</option>
+                    <option value="flat">Flat</option>
+                    <option value="house">House</option>
                 </select>&emsp;
                 Transaction type: &emsp;
                 <select class="form-control transaction" id="form" name="transaction">
                     <option selected="selected" disabled="disabled">-Select a transaction-</option>
-                    <option value="1">Buy</option>
-                    <option value="2">Rent</option>
+                    <option value="buy">Buy</option>
+                    <option value="rent">Rent</option>
                 </select>&emsp;
                 Price: &emsp;
                     <select class="form-control priceMin" id="form0" name="priceMin">
@@ -92,7 +92,7 @@
                             <option value="300000">300000</option>
                             <option value="400000">400000</option>
                         </select> 
-                        <span>to</span>
+                        <span id="to">to</span>
                         <select class="form-control priceMax" id="form0" name="priceMax">
                             <option value="50">50</option>
                             <option value="100">100</option>
@@ -113,7 +113,7 @@
                             <option selected="selected" disabled="disabled">-max-</option>
                         </select>
                     </select> &emsp;
-                <button id="form" class="search-button" type="submit" value="submit" style="width:75px;">Let's Go!</button></li> <!--later, this should actually work-->
+                <button id="form" class="search-button" type="submit" value="submit" style="width:75px;">Let's Go!</button></li>
             </form>
         </div>
     </ul>
@@ -186,6 +186,7 @@
             document.title = "About Us";
             $("#webpage").empty();
             $('link[href="/menus/faqpage.css"]').prop('disabled', false);
+            $('link[href="resultpage.css"]').prop('disabled', true);
             $('#webpage').load('menus/about-us.html');
         });
     </script>
@@ -194,6 +195,7 @@
             document.title = "FAQs";
             $("#webpage").empty();
             $('link[href="/menus/faqpage.css"]').prop('disabled', false);
+            $('link[href="resultpage.css"]').prop('disabled', true);
             $('#webpage').load('menus/faqpage.html');
         });
     </script>
@@ -202,6 +204,7 @@
             document.title = "Contact";
             $("#webpage").empty();
             $('link[href="/menus/faqpage.css"]').prop('disabled', true);
+            $('link[href="resultpage.css"]').prop('disabled', true);
             $('#webpage').load('menus/contact.html');
         });
     </script>
@@ -210,6 +213,7 @@
             document.title = "vriskospiti.gr";
             $("#webpage").empty();
             $('link[href="/menus/faqpage.css"]').prop('disabled', true);
+            $('link[href="resultpage.css"]').prop('disabled', true);
             $('#webpage').load('carousel.html');
         });
     </script>
@@ -218,18 +222,18 @@
             document.title = "List your property";
             $("#webpage").empty();
             $('link[href="/menus/faqpage.css"]').prop('disabled', true);
+            $('link[href="resultpage.css"]').prop('disabled', true);
             $('#webpage').load('newform.html');
         });
     </script>
     <script>
         $(".search-button").click(function (){
             document.title="Results";
-            var min=$(".priceMin").val();
-            var max=$(".priceMax").val();
             $("#webpage").empty();
+            $('link[href="resultpage.css"]').prop('disabled', false);
             $("#webpage").load("resultpage.html");
 
-        })
+        });
     </script>
 </body>
 </html>

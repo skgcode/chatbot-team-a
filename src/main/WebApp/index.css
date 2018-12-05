@@ -61,6 +61,11 @@ div.title {
     font-size: 22px;
 }
 
+#to{
+    width: 100%;
+    row-gap: normal;
+}
+
 .dropdowns {
     list-style: none;
     list-style-type: none !important;
