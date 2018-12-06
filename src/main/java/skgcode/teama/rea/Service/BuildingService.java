@@ -31,4 +31,8 @@ public interface BuildingService {
     List<Building> getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndYearBetween(String region, String buildingType,
                                                                                       String transactionType, Integer priceMin,
                                                                                       Integer priceMax);
+
+    List<Building> getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrYearBetween(String region, String buildingType,
+                                                                                      String transactionType, Integer priceMin,
+                                                                                      Integer priceMax);
 }

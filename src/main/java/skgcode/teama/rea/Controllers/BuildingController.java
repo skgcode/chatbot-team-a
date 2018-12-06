@@ -112,4 +112,16 @@ public class BuildingController implements ApiController {
         return buildingService.getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndYearBetween(region, buildingType,
                 transactionType, priceMin, priceMax);
     }
+
+    @RequestMapping(value = "/building/query/regionOrBuildingTypeOrTransactionTypeOrPriceRange",
+            params = {"region", "buildingType", "transactionType", "priceMin", "priceMax"},
+            method = RequestMethod.GET)
+    public List<Building> getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrPriceRange(@RequestParam("region") String region,
+                                                                                            @RequestParam("buildingType") String buildingType,
+                                                                                            @RequestParam("transactionType") String transactionType,
+                                                                                            @RequestParam("priceMin") Integer priceMin,
+                                                                                            @RequestParam("priceMax") Integer priceMax) {
+        return buildingService.getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrYearBetween(region, buildingType,
+                transactionType, priceMin, priceMax);
+    }
 }

@@ -1,86 +1,88 @@
 $(document).ready(function sendRequest() {
     $.ajax({
         url: "/rea/building/query/regionAndBuildingTypeAndTransactionTypeAndPriceRange",
-        data: {"region":$(".municipality").val(),
-            "buildingType":$(".type").val(),
-            "transactionType":$(".transaction").val(),
-            "priceMin":$(".priceMin").val(),
-            "priceMax":$(".priceMax").val()}
+        data: {
+            "region": $(".municipality").val(),
+            "buildingType": $(".type").val(),
+            "transactionType": $(".transaction").val(),
+            "priceMin": $(".priceMin").val(),
+            "priceMax": $(".priceMax").val()
+        }
     }).then(function getData(data) {
-        if(data.length===0){
-            var block0= document.createElement("div");
+        if (data.length === 0) {
+            var block0 = document.createElement("div");
             block0.append("No property was found based on your criteria");
-            block0.style.cssText="vertical-align: top;padding-left: 5%;padding-top:3%;font-size:18px;border:none;";
+            block0.style.cssText = "vertical-align: top;padding-left: 5%;padding-top:3%;font-size:18px;border:none;";
             $('.coveo-results-column').append(block0);
         }
         $.each(data, function (key, entry) {
             var layout = document.createElement("div");
-            layout.className="coveo-list-layout";
-            layout.className="CoveoResult";
-            layout.style.cssText="vertical-align: middle;color: black;background-color: #f4f4f4;border: none;border-radius: 20px;";
-            var frame =document.createElement("div");
-            frame.className="coveo-result-frame";
+            layout.className = "coveo-list-layout";
+            layout.className = "CoveoResult";
+            layout.style.cssText = "vertical-align: middle;color: black;background-color: #f4f4f4;border: none;border-radius: 20px;";
+            var frame = document.createElement("div");
+            frame.className = "coveo-result-frame";
             var resultRow = document.createElement("div");
-            resultRow.className= "coveo-result-row";
+            resultRow.className = "coveo-result-row";
             var imgCell = document.createElement("div");
-            imgCell.className="coveo-result-row";
-            imgCell.style.cssText="margin-bottom: 50px;margin-top: -95px;";
+            imgCell.className = "coveo-result-row";
+            imgCell.style.cssText = "margin-bottom: 50px;margin-top: -95px;";
             var spanClass = document.createElement("span");
-            spanClass.className="CoveoYouTubeThumbnail";
+            spanClass.className = "CoveoYouTubeThumbnail";
             var imgcontainer = document.createElement("div");
-            imgcontainer.className="coveo-youtube-thumbnail-container";
+            imgcontainer.className = "coveo-youtube-thumbnail-container";
             var image = document.createElement("img");
-            image.src=entry.photo.path;
-            image.alt=entry.type.name+" "+entry.id;
-            image.style.cssText="width: 150px; margin-left: 30px; border-radius: 10px;";
+            image.src = entry.photo.path;
+            image.alt = entry.type.name + " " + entry.id;
+            image.style.cssText = "width: 150px; margin-left: 30px; border-radius: 10px;";
             imgcontainer.append(image);
             spanClass.append(imgcontainer);
             imgCell.append(spanClass);
-            imgCell.style.cssText="margin-bottom: 50px;margin-top: -95px;";
+            imgCell.style.cssText = "margin-bottom: 50px;margin-top: -95px;";
             //imgCell.style.cssText="display: table;table-layout: fixed;margin: 0.25em 0;margin-left: 200px;";
             var propertyCell = document.createElement("div");
-            propertyCell.className="coveo-result-cell";
+            propertyCell.className = "coveo-result-cell";
             var titleRow = document.createElement("div");
-            titleRow.className="coveo-result-row";
+            titleRow.className = "coveo-result-row";
             var titleCell = document.createElement("div");
-            titleCell.className="coveo-result-cell";
+            titleCell.className = "coveo-result-cell";
             var title = document.createElement("pre");
-            title.append(entry.type.name+" "+ entry.id);
-            title.style.cssText="border:none!important;margin-left: -230%;";
+            title.append(entry.type.name + " " + entry.id);
+            title.style.cssText = "border:none!important;margin-left: -230%;";
             titleCell.append(title);
             titleRow.append(titleCell);
-            var priceCell=document.createElement("div");
-            priceCell.className="coveo-result-cell";
-            priceCell.style.cssText="text-align: right;width: 100%;font-size: 12px;margin-left: 50%!important;";
+            var priceCell = document.createElement("div");
+            priceCell.className = "coveo-result-cell";
+            priceCell.style.cssText = "text-align: right;width: 100%;font-size: 12px;margin-left: 50%!important;";
             var pricePre = document.createElement("pre");
-            pricePre.className="CoveoFieldValue";
+            pricePre.className = "CoveoFieldValue";
             pricePre.append(entry.price + "€");
-            pricePre.style.cssText="border: none;text-align: right !important;margin-left: 79% !important;";
+            pricePre.style.cssText = "border: none;text-align: right !important;margin-left: 79% !important;";
             priceCell.append(pricePre);
             titleRow.append(priceCell);
-            titleRow.style.cssText="text-align: left;width: 100%;font-size: 12px;display: table-cell;border: none !important;margin-left: -20%!important";
+            titleRow.style.cssText = "text-align: left;width: 100%;font-size: 12px;display: table-cell;border: none !important;margin-left: -20%!important";
             propertyCell.append(titleRow);
-            titleCell.style.cssText="display: table; table-layout: fixed; margin: 0.25em 0px 0.25em 200px;";
+            titleCell.style.cssText = "display: table; table-layout: fixed; margin: 0.25em 0px 0.25em 200px;";
             var descriptionRow = document.createElement("div");
-            descriptionRow.className="coveo-result-row";
-            descriptionRow.style.cssText="display: table-row;margin-left: 220px;width: 100%;";
-            var descriptionCell=document.createElement("div");
-            descriptionCell.className="coveo-result-cell";
-            var descriptionSpanClass=document.createElement("span");
-            var text="Region: "+entry.region.name +"\n"+ " Available to: "+ entry.transactionType.name+"\n"+ " Area: "+ entry.squareMeters + "\n"+ " Built in: "+ entry.year +"\n"+" Floor: "+entry.floor+ "\n"+ " Heating: " + entry.heating;
+            descriptionRow.className = "coveo-result-row";
+            descriptionRow.style.cssText = "display: table-row;margin-left: 220px;width: 100%;";
+            var descriptionCell = document.createElement("div");
+            descriptionCell.className = "coveo-result-cell";
+            var descriptionSpanClass = document.createElement("span");
+            var text = "Region: " + entry.region.name + "\n" + " Available to: " + entry.transactionType.name + "\n" + " Area: " + entry.squareMeters + "\n" + " Built in: " + entry.year + "\n" + " Floor: " + entry.floor + "\n" + " Heating: " + entry.heating;
             descriptionSpanClass.append(text);
             descriptionCell.append(descriptionSpanClass);
             descriptionRow.append(descriptionCell);
-            descriptionRow.style.cssText="display:table-row;margin-left:220px;";
+            descriptionRow.style.cssText = "display:table-row;margin-left:220px;";
             propertyCell.append(descriptionRow);
-            propertyCell.style.cssText="margin-left:200%;";
+            propertyCell.style.cssText = "margin-left:200%;";
             resultRow.append(propertyCell);
             resultRow.append(imgCell);
-            resultRow.style.cssText="width: 100px; display: table; table-layout: fixed; margin: 0.25em 0px;";
+            resultRow.style.cssText = "width: 100px; display: table; table-layout: fixed; margin: 0.25em 0px;";
             frame.append(resultRow);
-            frame.style.cssText="margin-left: 0px;display: block;width: 100%;height: 100%;";
+            frame.style.cssText = "margin-left: 0px;display: block;width: 100%;height: 100%;";
             layout.append(frame);
-            layout.style.cssText="color: black;background-color: rgb(244, 244, 244);border: none;border-radius: 20px;width:53%;";
+            layout.style.cssText = "color: black;background-color: rgb(244, 244, 244);border: none;border-radius: 20px;width:53%;";
             $('.coveo-results-column').append(layout);
         })
     });

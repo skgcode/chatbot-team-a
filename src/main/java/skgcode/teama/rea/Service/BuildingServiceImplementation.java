@@ -80,6 +80,14 @@ public class BuildingServiceImplementation implements BuildingService {
     }
 
     @Override
+    public List<Building> getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrYearBetween(String region, String buildingType,
+                                                                                          String transactionType, Integer priceMin,
+                                                                                          Integer priceMax) {
+        return buildingRepository.findBuildingsByPriceBetweenOrRegionOrTransactionTypeOrType(region, buildingType,
+                transactionType, priceMin, priceMax);
+    }
+
+    @Override
     public List<Building> getQueryWherePriceRangeOrYearOrSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters) {
         return buildingRepository.findAllByPriceRangeOrYearOrSquareMeters(priceMin, priceMax, year, squareMeters);
     }

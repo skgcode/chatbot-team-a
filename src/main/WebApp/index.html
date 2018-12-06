@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--chatbot-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
+    <link rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://static.cloud.coveo.com/searchui/v1.2537/js/CoveoJsSearch.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="inChatResult.js"></script>
 </head>
 <body style="overflow-y: scroll">
 <div class="title">
@@ -34,11 +36,12 @@
 </ul>
 <ul class="dropdowns" style="width: 100%;border-color: #333;margin: 0">
     <div class="container">
-        <form class="form-inline" onsubmit="return false" style="height:50px; padding-top: 8px;width:1550px;margin-left: -18%;">
+        <form class="form-inline" onsubmit="return false"
+              style="height:50px; padding-top: 8px;width:1550px;margin-left: -18%;">
             City: &emsp;<!--Only Thessaloniki is going to work; the other cities should remain disabled -->
             <select id="form" class="form-control city" name="city">
                 <option selected="selected" disabled="disabled">-Select a city-</option>
-                <option value="1" >Thessaloniki</option>
+                <option value="1">Thessaloniki</option>
                 <option value="2" disabled="disabled">Athens</option>
                 <option value="3" disabled="disabled">Heraklion</option>
                 <option value="4" disabled="disabled">Volos</option>
@@ -113,7 +116,8 @@
                 <option selected="selected" disabled="disabled">-max-</option>
             </select>
             </select> &emsp;
-            <button id="form" class="search-button" type="submit" value="submit" style="width:75px;">Let's Go!</button></li>
+            <button id="form" class="search-button" type="submit" value="submit" style="width:75px;">Let's Go!</button>
+            </li>
         </form>
     </div>
 </ul>
@@ -160,7 +164,8 @@
     <!-- Footer copyright-->
     <div class="footer-copyright">
         <div class="container">
-            &copy; 2018 Copyright Team-a | <a class="skgcode" href="http://www.skgcode.gr/" style="text-decoration:none;">skg.code</a>
+            &copy; 2018 Copyright Team-a | <a class="skgcode" href="http://www.skgcode.gr/"
+                                              style="text-decoration:none;">skg.code</a>
             <a class="grey-text text-lighten-4 right" href="#!" style="text-decoration:none;">Privacy Policy</a>
         </div>
     </div>
@@ -227,8 +232,8 @@
     });
 </script>
 <script>
-    $(".search-button").click(function (){
-        document.title="Results";
+    $(".search-button").click(function () {
+        document.title = "Results";
         $("#webpage").empty();
         $('link[href="resultpage.css"]').prop('disabled', false);
         $("#webpage").load("resultpage.html");
