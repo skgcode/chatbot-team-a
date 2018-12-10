@@ -100,8 +100,10 @@ function fakeMessage() {
         if (respText.match(/.*result.*/gi)) { // recognize the result word and it will be link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
             sendRequest(parameters);
-        } else if (respText.match(/.*sell.*/gi)) { // recognize the sell word and it will be link
+        } else if (msg.match(/.*sell.*/gi)) { // recognize the sell word and it will be link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+            $("#webpage").empty();
+            $("#webpage").load("newform.html");
         } else { // any other word it will be bubble, not link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
