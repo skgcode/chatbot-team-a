@@ -12,8 +12,13 @@ $(document).ready(function sendRequest() {
         if (data.length === 0) {
             var block0 = document.createElement("div");
             block0.append("No property was found based on your criteria");
-            block0.style.cssText = "vertical-align: top;padding-left: 5%;padding-top:3%;font-size:18px;border:none;";
+            block0.style.cssText = "vertical-align: top;padding-left: 5%;padding-top:3%;font-size:18px;border:none;font-weight:bold;";
+            var image = document.createElement("img");
+            image.src="https://media1.tenor.com/images/a828888852e708d9afaaad06c7f9513f/tenor.gif?itemid=10251428";
+            image.alt="Results not found";
+            image.style.cssText="position:center; width:50%; height:10%;margin-top:3em;"
             $('.coveo-results-column').append(block0);
+            $('.coveo-results-column').append(image);
         }
         $.each(data, function (key, entry) {
             var layout = document.createElement("div");
@@ -57,7 +62,7 @@ $(document).ready(function sendRequest() {
             var pricePre = document.createElement("pre");
             pricePre.className = "CoveoFieldValue";
             pricePre.append(entry.price + "€");
-            pricePre.style.cssText = "border: none;text-align: right !important;margin-left: 79% !important;";
+            pricePre.style.cssText = "border: none;text-align: right !important;margin-left: 79% !important;width:30%";
             priceCell.append(pricePre);
             titleRow.append(priceCell);
             titleRow.style.cssText = "text-align: left;width: 100%;font-size: 12px;display: table-cell;border: none !important;margin-left: -20%!important";
