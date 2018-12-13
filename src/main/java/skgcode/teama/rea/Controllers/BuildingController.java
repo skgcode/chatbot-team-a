@@ -19,30 +19,6 @@ public class BuildingController implements ApiController {
         return buildingService.getAllBuildings();
     }
 
-    // Retrieve by ID
-    @RequestMapping(value = "/building/id/{id}", method = RequestMethod.GET)
-    public Building getById(@PathVariable Integer id) {
-        return buildingService.getBuildingById(id);
-    }
-
-    // Retrieve by price
-    @RequestMapping(value = "/building/price/{price}", method = RequestMethod.GET)
-    public List<Building> getByPrice(@PathVariable float price) {
-        return buildingService.getBuildingsByPrice(price);
-    }
-
-    // Retrieve by year
-    @RequestMapping(value = "/building/year/{year}", method = RequestMethod.GET)
-    public List<Building> getByYear(@PathVariable Integer year) {
-        return buildingService.getBuildingsByYear(year);
-    }
-
-    // Retrieve by square meters
-    @RequestMapping(value = "/building/squareMeters/{squareMeters}", method = RequestMethod.GET)
-    public List<Building> getBySquareMeters(@PathVariable Integer squareMeters) {
-        return buildingService.getBuildingsBySquareMeters(squareMeters);
-    }
-
     // Retrieve results WHERE PRICE OR YEAR OR SQUARE_METERS
     @RequestMapping(value = "/building/query/priceOrYearOrSquaremeters",
             params = {"price", "year", "squareMeters"},
@@ -83,6 +59,7 @@ public class BuildingController implements ApiController {
         return buildingService.getYearRangeBetween(min, max);
     }
 
+    // Retrieve results as query: Where Price Between Or Year Or Squaremeters
     @RequestMapping(value = "/building/query/priceRangeOrYearOrsquareMeters",
             params = {"priceMin", "priceMax", "year", "squareMeters"},
             method = RequestMethod.GET)
@@ -109,19 +86,41 @@ public class BuildingController implements ApiController {
                                                                                             @RequestParam("transactionType") String transactionType,
                                                                                             @RequestParam("priceMin") Integer priceMin,
                                                                                             @RequestParam("priceMax") Integer priceMax) {
-        return buildingService.getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndYearBetween(region, buildingType,
+        return buildingService.getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndPriceBetween(region, buildingType,
                 transactionType, priceMin, priceMax);
     }
 
-    @RequestMapping(value = "/building/query/regionOrBuildingTypeOrTransactionTypeOrPriceRange",
-            params = {"region", "buildingType", "transactionType", "priceMin", "priceMax"},
+    @RequestMapping(value = "/building/query/regionOrRegionAndBuildingTypeAndTransactionTypeAndPriceRange",
+            params = {"region1", "region2", "buildingType", "transactionType", "priceMin", "priceMax"},
             method = RequestMethod.GET)
-    public List<Building> getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrPriceRange(@RequestParam("region") String region,
-                                                                                            @RequestParam("buildingType") String buildingType,
-                                                                                            @RequestParam("transactionType") String transactionType,
-                                                                                            @RequestParam("priceMin") Integer priceMin,
-                                                                                            @RequestParam("priceMax") Integer priceMax) {
-        return buildingService.getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrYearBetween(region, buildingType,
+    public List<Building> getQueryWhereRegionOrRegionAndBuildingTypeAndTransactionTypeAndPriceRange(@RequestParam("region1") String region1,
+                                                                                                    @RequestParam("region2") String region2,
+                                                                                                    @RequestParam("buildingType") String buildingType,
+                                                                                                    @RequestParam("transactionType") String transactionType,
+                                                                                                    @RequestParam("priceMin") Integer priceMin,
+                                                                                                    @RequestParam("priceMax") Integer priceMax) {
+        return buildingService.getQueryWhereRegionOrRegionAndBuildingTypeAndTransactionTypeAndPriceBetween(region1, region2, buildingType,
                 transactionType, priceMin, priceMax);
+    }
+
+    @RequestMapping(value = "/building/query/regionAndTransactionTypeAndPriceRange",
+            params = {"region", "transactionType", "priceMin", "priceMax"},
+            method = RequestMethod.GET)
+    public List<Building> getQueryWhereRegionAndTransactionTypeAndPriceRange(@RequestParam("region") String region,
+                                                                                     @RequestParam("transactionType") String transactionType,
+                                                                                     @RequestParam("priceMin") Integer priceMin,
+                                                                                     @RequestParam("priceMax") Integer priceMax) {
+        return buildingService.getQueryWhereRegionAndTransactionTypeAndPriceBetween(region, transactionType, priceMin, priceMax);
+    }
+
+    @RequestMapping(value = "/building/query/regionOrRegionAndTransactionTypeAndPriceRange",
+            params = {"region1", "region2", "transactionType", "priceMin", "priceMax"},
+            method = RequestMethod.GET)
+    public List<Building> getQueryWhereRegionOrRegionAndTransactionTypeAndPriceRange(@RequestParam("region1") String region1,
+                                                                                     @RequestParam("region2") String region2,
+                                                                                     @RequestParam("transactionType") String transactionType,
+                                                                                     @RequestParam("priceMin") Integer priceMin,
+                                                                                     @RequestParam("priceMax") Integer priceMax) {
+        return buildingService.getQueryWhereRegionOrRegionAndTransactionTypeAndPriceBetween(region1, region2, transactionType, priceMin, priceMax);
     }
 }

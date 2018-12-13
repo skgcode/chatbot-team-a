@@ -6,14 +6,6 @@ import java.util.List;
 
 public interface BuildingService {
 
-    Building getBuildingById(Integer id);
-
-    List<Building> getBuildingsByPrice(Float price);
-
-    List<Building> getBuildingsByYear(Integer year);
-
-    List<Building> getBuildingsBySquareMeters(Integer sqMeters);
-
     List<Building> getAllBuildings();
 
     List<Building> getQueryWherePriceRangeOrYearOrSquearmeters(Float priceMin, Float priceMax, Integer year, Integer squareMeters);
@@ -28,11 +20,18 @@ public interface BuildingService {
 
     List<Building> getYearRangeBetween(Integer yearMin, Integer yearMax);
 
-    List<Building> getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndYearBetween(String region, String buildingType,
-                                                                                      String transactionType, Integer priceMin,
-                                                                                      Integer priceMax);
+    List<Building> getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndPriceBetween(String region, String buildingType,
+                                                                                       String transactionType, Integer priceMin,
+                                                                                       Integer priceMax);
 
-    List<Building> getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrYearBetween(String region, String buildingType,
-                                                                                      String transactionType, Integer priceMin,
-                                                                                      Integer priceMax);
+    List<Building> getQueryWhereRegionOrRegionAndBuildingTypeAndTransactionTypeAndPriceBetween(String region1, String region2, String buildingType,
+                                                                                               String transactionType, Integer priceMin,
+                                                                                               Integer priceMax);
+
+    List<Building> getQueryWhereRegionOrRegionAndTransactionTypeAndPriceBetween(String region1, String region2,
+                                                                                String transactionType, Integer priceMin,
+                                                                                Integer priceMax);
+
+    List<Building> getQueryWhereRegionAndTransactionTypeAndPriceBetween(String region, String transactionType,
+                                                                        Integer priceMin, Integer priceMax);
 }
