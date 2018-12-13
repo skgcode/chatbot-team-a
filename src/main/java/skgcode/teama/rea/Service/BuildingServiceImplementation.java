@@ -1,38 +1,17 @@
 package skgcode.teama.rea.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import skgcode.teama.rea.Model.Building;
 import skgcode.teama.rea.Repository.BuildingRepository;
-
-import java.util.List;
 
 @Service
 public class BuildingServiceImplementation implements BuildingService {
 
     @Autowired
     BuildingRepository buildingRepository;
-
-    @Override
-    public Building getBuildingById(Integer id) {
-        return buildingRepository.findBuildingById(id);
-    }
-
-    @Override
-    public List<Building> getBuildingsByPrice(Float price) {
-        return buildingRepository.findBuildingByPrice(price);
-    }
-
-
-    @Override
-    public List<Building> getBuildingsByYear(Integer year) {
-        return buildingRepository.findBuildingByYear(year);
-    }
-
-    @Override
-    public List<Building> getBuildingsBySquareMeters(Integer sqMeters) {
-        return buildingRepository.findBuildingBySquareMeters(sqMeters);
-    }
 
     @Override
     public List<Building> getAllBuildings() {
@@ -72,9 +51,9 @@ public class BuildingServiceImplementation implements BuildingService {
     }
 
     @Override
-    public List<Building> getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndYearBetween(String region, String buildingType,
-                                                                                             String transactionType, Integer priceMin,
-                                                                                             Integer priceMax) {
+    public List<Building> getQueryWhereRegionAndBuildingTypeAndTransactionTypeAndPriceBetween(String region, String buildingType,
+                                                                                              String transactionType, Integer priceMin,
+                                                                                              Integer priceMax) {
         return buildingRepository.findBuildingsByPriceBetweenAndRegionAndTransactionTypeAndType(region, buildingType, transactionType,
                 priceMin, priceMax);
     }
@@ -93,11 +72,10 @@ public class BuildingServiceImplementation implements BuildingService {
     }
 
     @Override
-    public List<Building> getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrYearBetween(String region, String buildingType,
-                                                                                          String transactionType, Integer priceMin,
-                                                                                          Integer priceMax) {
-        return buildingRepository.findBuildingsByPriceBetweenOrRegionOrTransactionTypeOrType(region, buildingType,
-                transactionType, priceMin, priceMax);
+    public List<Building> getQueryWhereRegionAndTransactionTypeAndPriceBetween(String region, String transactionType,
+                                                                               Integer priceMin, Integer priceMax) {
+        return buildingRepository.findBuildingsByPriceBetweenAndRegionAndTransactionType(region, transactionType,
+                priceMin, priceMax);
     }
 
     @Override

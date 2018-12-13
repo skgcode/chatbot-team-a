@@ -8,6 +8,8 @@ var accessToken = "85334df769aa486bbb24cecd4eac338a";
 //url του dialogflow api
 var baseUrl = "https://api.dialogflow.com/v1/";
 
+var parameters = [];
+
 // loading the first message
 $(window).load(function () {
     $messages.mCustomScrollbar();
@@ -98,8 +100,30 @@ function fakeMessage() {
         $('.message.loading').remove();
         //put bot's answer in window
         if (respText.match(/.*result.*/gi)) { // recognize the result word and it will be link
-            $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
-            sendRequest(parameters);
+            var count = 0;
+            var countRegion = parameters.Region.length;
+            for (var item in parameters) {
+                count++;
+            }
+            console.log(count);
+            console.log(countRegion);
+            if (count > 6) {
+                if (countRegion > 1) {
+                    $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                    sendRequest(parameters);
+                } else {
+                    $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                    sendRequestWithoutRegion2(parameters);
+                }
+            } else if (count <= 6) {
+                if (countRegion === 2) {
+                    $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                    sendRequestWithoutKatigoria(parameters);
+                } else {
+                    $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                    sendRequestWithoutKatigoriaAndRegion2(parameters);
+                }
+            }
         } else if (msg.match(/.*sell.*/gi)) { // recognize the sell word and it will be link
             $('<div class="message new"><figure class="avatar"><img src="botbubble/rea.png" /></figure>' + respText + '</div>').appendTo($('.mCSB_container')).addClass('new');
             $("#webpage").empty();
