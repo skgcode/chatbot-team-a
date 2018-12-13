@@ -50,11 +50,28 @@ public interface BuildingRepository extends CrudRepository<Building, Integer> {
                                                                                  String transactionType, Integer priceMin,
                                                                                  Integer priceMax);
 
+    // FORM BASED QUERY WITH AND - REGION1 OR REGION2
+    @Query(value = "SELECT * FROM BUILDING, REGION, TRANSACTION_TYPE, BUILDING_TYPE\n" +
+            "WHERE ((REGION.NAME=?1 OR REGION.NAME=?2) AND BUILDING_TYPE.NAME=?3) AND TRANSACTION_TYPE.NAME=?4 AND (BUILDING.PRICE BETWEEN ?5 AND ?6)\n" +
+            "AND REGION.ID=BUILDING.REGION_ID AND BUILDING_TYPE.ID=BUILDING.TYPE_ID AND TRANSACTION_TYPE.ID=BUILDING.TRANSACTION_TYPE_ID", nativeQuery = true)
+    List<Building> findBuildingsByPriceBetweenAndRegionOrRegionAndTransactionTypeAndType(String region1, String region2, String buildingType,
+                                                                                         String transactionType, Integer priceMin,
+                                                                                         Integer priceMax);
+
+    // FORM BASED QUERY WITH AND - REGION1 OR REGION2 without BUILDING_TYPE
+    @Query(value = "SELECT * FROM BUILDING, REGION, TRANSACTION_TYPE, BUILDING_TYPE\n" +
+            "WHERE (REGION.NAME=?1 OR REGION.NAME=?2) AND TRANSACTION_TYPE.NAME=?3 AND (BUILDING.PRICE BETWEEN ?4 AND ?5)\n" +
+            "AND REGION.ID=BUILDING.REGION_ID AND TRANSACTION_TYPE.ID=BUILDING.TRANSACTION_TYPE_ID", nativeQuery = true)
+    List<Building> findBuildingsByPriceBetweenAndRegionOrRegionAndTransactionType(String region1, String region2,
+                                                                                  String transactionType, Integer priceMin,
+                                                                                  Integer priceMax);
+
+
     // FORM BASED QUERY WITH OR
     @Query(value = "SELECT * FROM BUILDING, REGION, TRANSACTION_TYPE, BUILDING_TYPE\n" +
             "WHERE REGION.NAME=?1 OR BUILDING_TYPE.NAME=?2 OR TRANSACTION_TYPE.NAME=?3 OR (BUILDING.PRICE BETWEEN ?4 AND ?5)\n" +
             "AND REGION.ID=BUILDING.REGION_ID AND BUILDING_TYPE.ID=BUILDING.TYPE_ID AND TRANSACTION_TYPE.ID=BUILDING.TRANSACTION_TYPE_ID", nativeQuery = true)
     List<Building> findBuildingsByPriceBetweenOrRegionOrTransactionTypeOrType(String region, String buildingType,
-                                                                                 String transactionType, Integer priceMin,
-                                                                                 Integer priceMax);
+                                                                              String transactionType, Integer priceMin,
+                                                                              Integer priceMax);
 }

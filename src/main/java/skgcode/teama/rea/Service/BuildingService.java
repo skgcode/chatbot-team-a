@@ -32,7 +32,15 @@ public interface BuildingService {
                                                                                       String transactionType, Integer priceMin,
                                                                                       Integer priceMax);
 
+    List<Building> getQueryWhereRegionOrRegionAndBuildingTypeAndTransactionTypeAndPriceBetween(String region1, String region2, String buildingType,
+                                                                                               String transactionType, Integer priceMin,
+                                                                                               Integer priceMax);
+
+    List<Building> getQueryWhereRegionOrRegionAndTransactionTypeAndPriceBetween(String region1, String region2,
+                                                                                String transactionType, Integer priceMin,
+                                                                                Integer priceMax);
+
     List<Building> getQueryWhereRegionOrBuildingTypeOrTransactionTypeOrYearBetween(String region, String buildingType,
-                                                                                      String transactionType, Integer priceMin,
-                                                                                      Integer priceMax);
+                                                                                   String transactionType, Integer priceMin,
+                                                                                   Integer priceMax);
 }
